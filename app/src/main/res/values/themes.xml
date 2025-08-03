@@ -1,0 +1,81 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Setup launcher (manifest) call handled -->
+    <style name="Theme.TriathlonPaceCalculator" parent="Base.Theme.TriathlonPaceCalculator" />
+
+    <!-- Base application theme -->
+    <style name="Base.Theme.TriathlonPaceCalculator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="PrimaryLabelStyle" parent="SecondaryLabelStyle">
+        <item name="android:width">90dp</item>
+    </style>
+
+    <style name="SecondaryLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">8pt</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BannerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+
+    <style name="AlertDialogTheme">
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/lightGreen</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Widget.Lichen.SegmentedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Lichen.SegmentedButton</item>
+        <item name="iconPadding">@dimen/space_sm</item>
+        <item name="android:paddingStart">@dimen/space_md</item>
+        <item name="android:paddingEnd">@dimen/space_md</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:backgroundTint">
+            @color/backgroundColor
+        </item>
+        <item name="android:textColor">@color/textColor
+        </item>
+        <item name="strokeColor">@color/base_color_interactive_secondary_outline_default</item>
+    </style>
+
+    <style name="ThemeOverlay.Lichen.SegmentedButton" parent="">
+        <item name="colorSecondaryContainer">@color/base_color_info_default</item>
+        <item name="colorContainer">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.Lichen.SegmentedButton.HighDensity" parent="Widget.Lichen.SegmentedButton">
+        <item name="android:padding">@dimen/space_sm</item>
+        <item name="android:minHeight">@dimen/space_lg_75</item>
+    </style>
+
+    <style name="roundedCorners_8rad" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+</resources>

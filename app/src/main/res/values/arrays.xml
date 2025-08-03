@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="imperialRun">
+        <item>Select distance</item>
+        <item>Marathon (miles)</item>
+        <item>20 miles</item>
+        <item>1/2 marathon (miles)</item>
+        <item>10 miles</item>
+        <item>6.2 miles (10km)</item>
+        <item>5 miles</item>
+        <item>3.1 miles (Parkrun)</item>
+    </string-array>
+
+    <string-array name="metricRun">
+        <item>Select distance</item>
+        <item>Marathon (kms)</item>
+        <item>30 km</item>
+        <item>1/2 marathon (kms)</item>
+        <item>10 km</item>
+        <item>5 km (Parkrun)</item>
+    </string-array>
+    
+    <string-array name="imperialBike">
+        <item>Select distance</item>
+        <item>Ironman (112miles)</item>
+        <item>Century (100miles)</item>
+        <item>1/2 Ironman (56miles)</item>
+        <item>Olympic Tri (24.85ml)</item>
+    </string-array>
+    
+    <string-array name="metricBike">
+        <item>Select distance</item>
+        <item>Ironman (180km)</item>
+        <item>Century (160km)</item>
+        <item>1/2 Ironman (90km)</item>
+        <item>Olympic Tri (40km)</item>
+    </string-array>
+    
+    <string-array name="imperialSwim">
+        <item>Select distance</item>
+        <item>10km (10,936yds)</item>
+        <item>IM (4,155yds)</item>
+        <item>1/2 IM (2,077yds)</item>
+        <item>Olympic (1640yds)</item>
+        <item>800m (875yds)</item>
+        <item>400m (437yds)</item>
+        <item>200m (219yds)</item>
+        <item>100m (109yds)</item>
+        <item>100 yards</item>
+        <item>50m (55yds)</item>
+    </string-array>
+    
+    <string-array name="metricSwim">
+        <item>Select distance</item>
+        <item>10km</item>
+        <item>IM (3.8km)</item>
+        <item>1/2 IM (1900km)</item>
+        <item>Olympic (1500m)</item>
+        <item>800m</item>
+        <item>400m</item>
+        <item>300m</item>
+        <item>200m</item>
+        <item>100m</item>
+        <item>50m</item>
+    </string-array>
+    
+</resources>
