@@ -20,7 +20,7 @@ import androidx.fragment.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity {
 
-    private boolean isDarkModeEnabled = true;
+    private boolean isDarkModeEnabled = false;
 
     private Activity activity;
 

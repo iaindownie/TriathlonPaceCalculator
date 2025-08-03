@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/PaceMilesLinearLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent">
 
     <TableLayout
         android:id="@+id/TableLayout01"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <TableRow
             android:id="@+id/TableRow01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lightGreen" >
+            android:background="@color/lightGreen">
 
             <LinearLayout
                 android:id="@+id/LinearLayout02"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/Topline01"
-                    android:gravity="center"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dip"
+                    android:gravity="center"
                     android:text="@string/helpText" />
             </LinearLayout>
         </TableRow>
@@ -33,22 +34,34 @@
         <TableRow
             android:id="@+id/TableRow02"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/LinearLayout03"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp" >
+                android:paddingBottom="10dp">
 
-                <EditText
-                    android:id="@+id/EditText01a"
-                    android:layout_width="fill_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/hh"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/EditText01a"
+                        style="@style/MyOutlinedTextField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:hint="hh"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:hintTextColor="@color/backgroundColor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <EditText
                     android:id="@+id/EditText01b"
@@ -102,22 +115,22 @@
         <TableRow
             android:id="@+id/TableRow04"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/LinearLayout05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp" >
+                android:paddingBottom="10dp">
 
                 <EditText
                     android:id="@+id/EditText02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:width="100dip"
                     android:hint="@string/km"
                     android:inputType="numberDecimal"
-                    android:maxLength="9"
-                    android:width="100dip" />
+                    android:maxLength="9" />
 
                 <Spinner
                     android:id="@+id/spinnerrun"
@@ -131,10 +144,10 @@
                     android:layout_width="100dip"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
+                    android:width="100dip"
                     android:minWidth="100dip"
                     android:text="@string/calcDistButton"
-                    android:textSize="12sp"
-                    android:width="100dip" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </TableRow>
 
@@ -172,12 +185,12 @@
         <TableRow
             android:id="@+id/TableRow06"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/LinearLayout07"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/EditText03a"
@@ -220,12 +233,12 @@
             android:id="@+id/TableRowFooter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lightGreen" >
+            android:background="@color/lightGreen">
 
             <LinearLayout
                 android:id="@+id/LinearLayoutFooter"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/FooterLine"
@@ -238,12 +251,12 @@
         <TableRow
             android:id="@+id/TableRow07"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/LinearLayout08"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <ToggleButton
                     android:id="@+id/togglebuttonRun"
@@ -265,13 +278,13 @@
         <TableRow
             android:id="@+id/TableRow08"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:id="@+id/LinearLayout09"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false" >
+                android:baselineAligned="false">
 
                 <ListView
                     android:id="@+id/ListViewRun"
