@@ -35,6 +35,13 @@
     <style name="AlertDialogTheme">
         <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
         <item name="buttonBarNeutralButtonStyle">@style/Alert.Button.Neutral</item>
+        <item name="shapeAppearanceOverlay">@style/roundedCorners_8rad</item>
+        <item name="materialAlertDialogTitleTextStyle">
+            @style/Widget.MaterialAlertDialog.Title.Text
+        </item>
+        <item name="materialAlertDialogBodyTextStyle">
+            @style/Widget.BodyTextAppearance.Body.Text
+        </item>
     </style>
 
     <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
@@ -95,6 +102,17 @@
 
     <style name="ListView" parent="@android:style/Widget.ListView">
         <item name="android:textColor">@color/base_color_info_default</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Widget.MaterialAlertDialog.Title.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/base_color_text_default</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Widget.BodyTextAppearance.Body.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/base_color_text_default</item>
         <item name="android:textSize">18sp</item>
     </style>
 

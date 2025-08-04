@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.instructions) {
-            //this.doHelpDialog();
+            Utils.doHelpDialog(activity);
             return true;
         }
         return super.onOptionsItemSelected(item);

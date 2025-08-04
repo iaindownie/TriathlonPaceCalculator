@@ -14,77 +14,52 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Utils {
 
-   public static void doAboutDialog(Activity activity) {
-      PackageInfo pInfo = null;
-      try {
-         pInfo = activity.getPackageManager().getPackageInfo("bto.android",
-                 PackageManager.GET_META_DATA);
-         //System.out.println("IAIN:" + getApplicationContext().getPackageName());
-         /*
-          * pInfo = getPackageManager().getPackageInfo("org.spawny.duathlon",
-          * PackageManager.GET_META_DATA);
-          */
-      } catch (PackageManager.NameNotFoundException e) {
-         e.printStackTrace();
-      }
+    public static void doAboutDialog(Activity activity) {
+        PackageInfo pInfo = null;
+        try {
+            pInfo = activity.getPackageManager().getPackageInfo("bto.android",
+                    PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
-      StringBuffer spawny = new StringBuffer();
-      spawny.append("A simple app to help runners, cyclists and swimmers calculate ");
-      spawny.append("pace or speed, and help make predictions for future events.\n\n");
-      spawny.append("This is a Spawny App!");
+        StringBuffer spawny = new StringBuffer();
+        spawny.append("A simple app to help runners, cyclists and swimmers calculate ");
+        spawny.append("pace or speed, and help make predictions for future events.\n\n");
+        spawny.append("This is a Spawny App!");
 
-      new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
-              .setTitle(activity.getString(R.string.about_title) + pInfo.versionName)
-              .setMessage(spawny.toString())
-              .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
-                 @Override
-                 public void onClick(DialogInterface dialogInterface, int i) {
+        new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
+                .setTitle(activity.getString(R.string.about_title) + pInfo.versionName)
+                .setMessage(spawny.toString())
+                .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                 }
-              })
-              .show();
+                    }
+                })
+                .show();
+    }
 
-//      MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(activity);
-//      View v = View.inflate(activity, R.layout.about, null);
-//      TextView text = v.findViewById(R.id.text);
+    public static void doHelpDialog(Activity activity) {
+        StringBuffer sb = new StringBuffer();
+        sb.append("This app is designed to return expected time, distance or pace/speed ");
+        sb.append("(based on which fields to choose to enter), and help make predictions for future events.\n\n");
+        sb.append("Simply add two of the fields to calculate the remaining field. For example, ");
+        sb.append("enter a time you wish to complete a run in, enter a distance manually (or ");
+        sb.append("use the dropdown to select common run distances) and then click 'get pace'!");
 
-//      text.setText(spawny.toString());
-//
-//      Button but = v.findViewById(R.id.dismissButton);
-//      but.setOnClickListener(new View.OnClickListener() {
-//         // @Override
-//         public void onClick(View v) {
-//            dialog.c
-//         }
-//      });
-//      dialog.setView(v);
-//      dialog.setTitle("Run/Bike Calculator " + pInfo.versionName);
-//      dialog.show();
-   }
+        new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
+                .setTitle("How to use")
+                .setMessage(sb.toString())
+                .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-//   private void doHelpDialog() {
-//      final Dialog dialog = new Dialog(this);
-//      dialog.setContentView(R.layout.instructions);
-//      dialog.setTitle("Instructions");
-//      /*
-//       * ImageView image = (ImageView) dialog.findViewById(R.id.image);
-//       * image.setImageResource(R.drawable.perfcoach_banner);
-//       * image.setOnClickListener(new View.OnClickListener() { public void
-//       * onClick(View v) { Intent intent = new Intent();
-//       * intent.setAction(Intent.ACTION_VIEW);
-//       * intent.addCategory(Intent.CATEGORY_BROWSABLE);
-//       * intent.setData(Uri.parse("http://www.performancecoaching.me/"));
-//       * startActivity(intent); } });
-//       */
-//      Button but = (Button) dialog.findViewById(R.id.helpDismissButton);
-//      dialog.show();
-//      but.setOnClickListener(new OnClickListener() {
-//         // @Override
-//         public void onClick(View v) {
-//            dialog.dismiss();
-//         }
-//      });
-//   }
+                    }
+                })
+                .show();
+    }
+
 
     public static MaterialButton returnStyledButton(Activity activity, MaterialButton button, boolean selected) {
         if (selected) {
