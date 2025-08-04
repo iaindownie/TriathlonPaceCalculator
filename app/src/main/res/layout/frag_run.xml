@@ -7,24 +7,6 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/LinearLayout02"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/space_md"
-        android:background="@color/base_color_surface_container_weak">
-
-        <TextView
-            android:id="@+id/Topline01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="@dimen/space_xs"
-            android:paddingBottom="@dimen/space_xs"
-            android:text="@string/helpText"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/LinearLayout03"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -238,16 +220,16 @@
         android:id="@+id/LinearLayout08"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/space_sm">
+        android:layout_margin="@dimen/space_sm"
+        android:orientation="horizontal">
 
         <ToggleButton
             android:id="@+id/togglebuttonRun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_md"
             android:textOff="@string/runConversionButton2"
             android:textOn="@string/runConversionButton1"
-            android:layout_marginEnd="@dimen/space_md"
             android:textSize="12sp" />
 
         <com.google.android.material.button.MaterialButton
@@ -260,7 +242,7 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout09"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false">
 
@@ -268,12 +250,8 @@
             android:id="@+id/ListViewRun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"/>
+            android:paddingBottom="10dp" />
 
-<!--        <ListView-->
-<!--            android:id="@+id/ListViewRun"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content" />-->
     </LinearLayout>
 
 </LinearLayout>

@@ -91,6 +91,23 @@
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space_md"
+                android:background="@color/base_color_surface_container_weak">
+
+                <TextView
+                    android:id="@+id/Topline01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_xs"
+                    android:paddingBottom="@dimen/space_xs"
+                    android:text="@string/helpText"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
             <FrameLayout
                 android:id="@+id/fragment1"

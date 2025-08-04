@@ -94,7 +94,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
         clearButton = (Button) rootView.findViewById(R.id.ClearButton);
         clearButton.setOnClickListener(this);
         timeButton = (Button) rootView.findViewById(R.id.Button01);
