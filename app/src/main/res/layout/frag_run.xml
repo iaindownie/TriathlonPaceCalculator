@@ -232,13 +232,14 @@
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_xs"
-        android:layout_marginBottom="@dimen/space_sm"
         android:background="@color/base_color_surface_container_weak" />
 
     <LinearLayout
         android:id="@+id/LinearLayout08"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/space_sm">
 
         <ToggleButton
             android:id="@+id/togglebuttonRun"
@@ -246,6 +247,7 @@
             android:layout_height="wrap_content"
             android:textOff="@string/runConversionButton2"
             android:textOn="@string/runConversionButton1"
+            android:layout_marginEnd="@dimen/space_md"
             android:textSize="12sp" />
 
         <com.google.android.material.button.MaterialButton
@@ -262,10 +264,16 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false">
 
-        <ListView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ListViewRun"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"/>
+
+<!--        <ListView-->
+<!--            android:id="@+id/ListViewRun"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
     </LinearLayout>
 
 </LinearLayout>
