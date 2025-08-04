@@ -32,7 +32,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 	private EditText text3a;
 	private EditText text3b;
 	private EditText text3c;
-	private Spinner s;
+	private Spinner spinner;
 	private ArrayAdapter<CharSequence> adapter;
 	private ListView lv;
 	private Button clearButton;
@@ -89,7 +89,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 		text1c.setWidth(10);
 		lv = (ListView) rootView.findViewById(R.id.ListViewRun);
 		clearButton = (Button) rootView.findViewById(R.id.ClearButton);
-		clearButton.setTextColor(getResources().getColor(R.color.darkGrey));
+		//clearButton.setTextColor(getResources().getColor(R.color.darkGrey));
 		clearButton.setOnClickListener(this);
 		timeButton = (Button) rootView.findViewById(R.id.Button01);
 		timeButton.setOnClickListener(this);
@@ -98,13 +98,14 @@ public class FragRun extends Fragment implements View.OnClickListener {
 		paceButton = (Button) rootView.findViewById(R.id.Button03);
 		paceButton.setOnClickListener(this);
 
-		s = (Spinner) rootView.findViewById(R.id.spinnerrun);
+		spinner = (Spinner) rootView.findViewById(R.id.spinnerrun);
 		adapter = ArrayAdapter.createFromResource(getActivity(),
 				R.array.metricRun, android.R.layout.simple_spinner_item);
 		isMetric = true;
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		s.setAdapter(adapter);
-		s.setOnItemSelectedListener(new OnItemSelectedListener() {
+		spinner.setAdapter(adapter);
+		//spinner.setSelection(0);
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int selectedPosition, long arg3) {
@@ -139,8 +140,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
 							android.R.layout.simple_spinner_item);
 					isMetric = true;
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-					s.setAdapter(adapter);
-					s.setOnItemSelectedListener(new OnItemSelectedListener() {
+					spinner.setAdapter(adapter);
+					spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 						public void onItemSelected(AdapterView<?> arg0,
 								View arg1, int selectedPosition, long arg3) {
@@ -170,8 +171,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
 							android.R.layout.simple_spinner_item);
 					isMetric = false;
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-					s.setAdapter(adapter);
-					s.setOnItemSelectedListener(new OnItemSelectedListener() {
+					spinner.setAdapter(adapter);
+					spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 						public void onItemSelected(AdapterView<?> arg0,
 								View arg1, int selectedPosition, long arg3) {
@@ -353,7 +354,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 			text1b.setText("");
 			text1c.setText("");
 			text2.setText("");
-			s.setSelection(0);
+			spinner.setSelection(0);
 			text3a.setText("");
 			text3b.setText("");
 			text3c.setText("");
@@ -391,7 +392,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
 				getActivity(), android.R.layout.simple_list_item_1, splits));
 		lv.setAdapter(birds);
 		lv.setTextFilterEnabled(true);
-
 	}
 
 	private String getGoodTimeEndValues(double val) {
