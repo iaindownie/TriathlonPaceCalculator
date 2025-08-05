@@ -3,9 +3,7 @@ package bto.android;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +12,7 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -24,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private boolean isDarkModeEnabled = false;
 
     private Activity activity;
-
-    private PackageInfo pInfo;
     private Integer tabPref;
     private SharedPreferences prefs;
 
@@ -38,24 +35,28 @@ public class MainActivity extends AppCompatActivity {
     private FragSwim fragSwim;
     private TextView topLine;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         setContentView(R.layout.activity_main);
 
-        activity = this;
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        activity = this;
         if (isDarkModeEnabled) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-
+        // Unused for now
         prefs = getPreferences(Context.MODE_PRIVATE);
         tabPref = prefs.getInt("tabPref", 0);
-        //System.out.println("TabPref Get in MainActivity:" + tabPref);
 
+        // Help line above fields
         topLine = findViewById(R.id.toplineInfo);
 
         // Set up the fragment containers
@@ -69,23 +70,10 @@ public class MainActivity extends AppCompatActivity {
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
+        // Set run selected by default on launch
         button1 = Utils.returnStyledButton(activity, button1, true);
 
-//        if(tabPref==0){
-//            button1 = Utils.returnStyledButton(activity, button1, true);
-//            button1.setChecked(true);
-//            button1.setEnabled(true);
-//        }else if(tabPref==1){
-//            button2 = Utils.returnStyledButton(activity, button2, true);
-//            button2.setChecked(true);
-//            button2.setEnabled(true);
-//        }else{
-//            button3 = Utils.returnStyledButton(activity, button3, true);
-//            button3.setChecked(true);
-//            button3.setEnabled(true);
-//        }
-
-        // Add activity type fragments to the containers
+        // Add the 3 activity type fragments to the containers
         FragmentManager manager = getSupportFragmentManager();
         fragRun = new FragRun();
         fragBike = new FragBike();
@@ -94,13 +82,12 @@ public class MainActivity extends AppCompatActivity {
         manager.beginTransaction().replace(R.id.fragment2, fragBike, "fragmenttwo").commit();
         manager.beginTransaction().replace(R.id.fragment3, fragSwim, "fragmentthree").commit();
 
+        // Set up toggle button listener
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
             public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                Log.d("INFO", isChecked + " " + checkedId);
                 if (isChecked) {
                     if (checkedId == button1.getId()) {
-                        Log.d("INFO", "Run pressed " + isChecked);
                         f1.setVisibility(View.VISIBLE);
                         f2.setVisibility(View.GONE);
                         f3.setVisibility(View.GONE);
@@ -108,12 +95,9 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, false);
                         topLine.setText(R.string.helpText);
-//                        SharedPreferences.Editor editor = prefs.edit().putInt(
-//                                "tabPref", 0);
-//                        editor.apply();
+                        mFirebaseAnalytics.logEvent("Run_Clicked", new Bundle());
                     }
                     if (checkedId == button2.getId()) {
-                        Log.d("INFO", "Bike pressed " + isChecked);
                         f1.setVisibility(View.GONE);
                         f2.setVisibility(View.VISIBLE);
                         f3.setVisibility(View.GONE);
@@ -121,12 +105,9 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, true);
                         button3 = Utils.returnStyledButton(activity, button3, false);
                         topLine.setText(R.string.helpTextBike);
-//                        SharedPreferences.Editor editor = prefs.edit().putInt(
-//                                "tabPref", 1);
-//                        editor.apply();
+                        mFirebaseAnalytics.logEvent("Bike_Clicked", new Bundle());
                     }
                     if (checkedId == button3.getId()) {
-                        Log.d("INFO", "Swim pressed " + isChecked);
                         f1.setVisibility(View.GONE);
                         f2.setVisibility(View.GONE);
                         f3.setVisibility(View.VISIBLE);
@@ -134,21 +115,11 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, true);
                         topLine.setText(R.string.helpText);
-//                        SharedPreferences.Editor editor = prefs.edit().putInt(
-//                                "tabPref", 2);
-//                        editor.apply();
+                        mFirebaseAnalytics.logEvent("Swim_Clicked", new Bundle());
                     }
                 }
             }
         });
-
-//        Button crashButton = findViewById(R.id.crashButton);
-//        crashButton.setText("Test Crash");
-//        crashButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view) {
-//                throw new RuntimeException("Test Crash"); // Force a crash
-//            }
-//        });
 
     }
 
@@ -168,14 +139,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.about) {
             Utils.doAboutDialog(this);
+            mFirebaseAnalytics.logEvent("About_Clicked", new Bundle());
             return true;
         }
         if (id == R.id.instructions) {
             Utils.doHelpDialog(activity);
+            mFirebaseAnalytics.logEvent("Help_Clicked", new Bundle());
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
 
 

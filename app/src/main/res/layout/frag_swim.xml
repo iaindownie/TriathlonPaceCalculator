@@ -82,6 +82,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/calcTimeButton"
+            android:textAllCaps="false"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -129,6 +130,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.25"
             android:text="@string/calcDistButton"
+            android:textAllCaps="false"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -196,6 +198,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:text="@string/calcPaceButton"
+            android:textAllCaps="false"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -216,6 +219,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clearButtonText"
+            android:textAllCaps="false"
             android:textSize="12sp" />
     </LinearLayout>
 

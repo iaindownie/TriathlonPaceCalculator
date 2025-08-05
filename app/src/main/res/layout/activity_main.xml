@@ -9,124 +9,71 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/selectLocationMaterialButtonLayout"
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/space_md"
+        android:gravity="center"
+        app:singleSelection="true">
 
-        <!--            <com.google.android.material.button.MaterialButtonToggleGroup-->
-        <!--                android:id="@+id/toggleButton"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_margin="@dimen/space_md"-->
-        <!--                android:gravity="center"-->
-        <!--                app:singleSelection="true">-->
-
-        <!--                <com.google.android.material.button.MaterialButton-->
-        <!--                    android:id="@+id/location_button1"-->
-        <!--                    style="?attr/materialButtonToggleGroupStyle"-->
-        <!--                    android:layout_width="0dp"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_weight="1"-->
-        <!--                    android:text="@string/title_section1"-->
-        <!--                    android:textColor="@color/backgroundColor" />-->
-
-        <!--                <com.google.android.material.button.MaterialButton-->
-        <!--                    android:id="@+id/location_button2"-->
-        <!--                    style="?attr/materialButtonToggleGroupStyle"-->
-        <!--                    android:layout_width="0dp"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_weight="1"-->
-        <!--                    android:text="@string/title_section2"-->
-        <!--                    android:textColor="@color/backgroundColor" />-->
-
-        <!--                <com.google.android.material.button.MaterialButton-->
-        <!--                    android:id="@+id/location_button3"-->
-        <!--                    style="?attr/materialButtonToggleGroupStyle"-->
-        <!--                    android:layout_width="0dp"-->
-        <!--                    android:layout_height="wrap_content"-->
-        <!--                    android:layout_weight="1"-->
-        <!--                    android:text="@string/title_section3"-->
-        <!--                    android:textColor="@color/backgroundColor" />-->
-
-        <!--            </com.google.android.material.button.MaterialButtonToggleGroup>-->
-
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/toggleButton"
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button1"
+            style="@style/Widget.Lichen.SegmentedButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_md"
-            android:gravity="center"
-            app:singleSelection="true">
+            android:layout_weight="1"
+            android:text="@string/title_section1"
+            app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button1"
-                style="@style/Widget.Lichen.SegmentedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/title_section1"
-                app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button2"
-                style="@style/Widget.Lichen.SegmentedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/title_section2"
-                app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button3"
-                style="@style/Widget.Lichen.SegmentedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/title_section3"
-                app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
-
-        </com.google.android.material.button.MaterialButtonToggleGroup>
-
-        <TextView
-            android:id="@+id/toplineInfo"
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button2"
+            style="@style/Widget.Lichen.SegmentedButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/space_sm"
-            android:background="@color/base_color_surface_container_weak"
-            android:gravity="center"
-            android:paddingTop="@dimen/space_xs"
-            android:paddingBottom="@dimen/space_xs"
-            android:text="@string/helpText"
-            android:textSize="13sp" />
+            android:layout_weight="1"
+            android:text="@string/title_section2"
+            app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/crashButton"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Crash!" />-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button3"
+            style="@style/Widget.Lichen.SegmentedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/title_section3"
+            app:shapeAppearanceOverlay="@style/roundedCorners_8rad" />
 
-        <FrameLayout
-            android:id="@+id/fragment1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
-        <FrameLayout
-            android:id="@+id/fragment2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+    <TextView
+        android:id="@+id/toplineInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_sm"
+        android:background="@color/base_color_surface_container_weak"
+        android:gravity="center"
+        android:paddingTop="@dimen/space_xs"
+        android:paddingBottom="@dimen/space_xs"
+        android:text="@string/helpText"
+        android:textSize="13sp" />
 
-        <FrameLayout
-            android:id="@+id/fragment3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+    <FrameLayout
+        android:id="@+id/fragment1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
 
-    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/fragment3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </LinearLayout>
