@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500292063704",
+    "project_id": "pace-calculator-2c344",
+    "storage_bucket": "pace-calculator-2c344.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500292063704:android:303177822a5845442222ad",
+        "android_client_info": {
+          "package_name": "bto.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvcOSda61leSsUXopRhyJ6xTDAWavSJz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

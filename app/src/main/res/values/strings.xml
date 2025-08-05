@@ -36,12 +36,13 @@
     <string name="bikeConversionButton2">Miles (switch to kms)</string>
     <string name="swimConversionButton1">Metres (switch to yards)</string>
     <string name="swimConversionButton2">Yards (switch to metres)</string>
-    <string name="helpText">Add 2 values to get 3rd (e.g. time and dist to get pace)</string>
-    <string name="helpTextBike">Add 2 values to get 3rd (e.g. time and dist to get speed)</string>
+    <string name="helpText">Add 2 values to get 3rd (e.g. time + dist >> pace)</string>
+    <string name="helpTextBike">Add 2 values to get 3rd (e.g. time + dist >> speed)</string>
     <string name="helpTextConvert">Use arrows to convert in either direction</string>
     <string name="Dismiss">Dismiss</string>
     <string name="about_title">"Swim/Bike/Run Calculator "</string>
     <string name="okay">Okay</string>
+    <string name="per100m">/100m</string>
 
 
 </resources>

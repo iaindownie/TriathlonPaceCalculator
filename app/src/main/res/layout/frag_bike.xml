@@ -8,46 +8,78 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout03"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_sm"
         android:layout_marginEnd="@dimen/space_sm"
         android:layout_marginBottom="@dimen/space_md">
 
-        <EditText
-            android:id="@+id/EditText01a"
-            android:layout_width="fill_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
             android:layout_weight="1"
-            android:hint="@string/hh"
-            android:inputType="number"
-            android:maxLength="2"
-            android:text="" />
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
 
-        <EditText
-            android:id="@+id/EditText01b"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/mm"
-            android:inputType="number"
-            android:maxLength="2"
-            android:text="" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditText01a"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="hh"
+                android:inputType="number"
+                android:maxLength="2"
+                app:hintTextColor="@color/backgroundColor" />
 
-        <EditText
-            android:id="@+id/EditText01c"
-            android:layout_width="fill_parent"
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
             android:layout_weight="1"
-            android:hint="@string/ss"
-            android:inputType="numberDecimal"
-            android:maxLength="6"
-            android:text="" />
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditText01b"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/mm"
+                android:inputType="number"
+                android:maxLength="2"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditText01c"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/ss"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/BikeButton01"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/calcTimeButton"
             android:textSize="12sp" />
@@ -55,35 +87,47 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout05"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_sm"
         android:layout_marginEnd="@dimen/space_sm"
         android:layout_marginBottom="@dimen/space_md">
 
-        <EditText
-            android:id="@+id/EditText02"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:width="100dip"
-            android:hint="@string/km"
-            android:inputType="numberDecimal"
-            android:maxLength="9" />
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="0.25"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditText02"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/km"
+                android:inputType="numberDecimal"
+                android:maxLength="9"
+                app:hintTextColor="@color/backgroundColor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/spinnerbike"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:prompt="@string/Presets" />
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="0.5"
+            android:prompt="@string/Presets"
+            android:spinnerMode="dropdown" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/BikeButton02"
-            android:layout_width="100dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:width="100dip"
-            android:minWidth="100dip"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
             android:text="@string/calcDistButton"
             android:textSize="12sp" />
     </LinearLayout>

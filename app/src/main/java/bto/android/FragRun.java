@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 
     private ToggleButton toggle;
 
-    private TextView theFocus;
+    //private TextView theFocus;
     private boolean isMetric;
     /**
      * The fragment argument representing the section number for this fragment.
@@ -70,7 +69,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_run, container, false);
 
-        theFocus = (TextView) rootView.findViewById(R.id.Topline01);
+        //theFocus = (TextView) rootView.findViewById(R.id.toplineInfo);
         text1a = (EditText) rootView.findViewById(R.id.EditText01a);
         text1b = (EditText) rootView.findViewById(R.id.EditText01b);
         text1c = (EditText) rootView.findViewById(R.id.EditText01c);
@@ -302,7 +301,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
 
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text3c.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -328,7 +327,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                     Double.valueOf(ccc), Double.valueOf(ddd),
                     Double.valueOf(eee), Double.valueOf(fff));
             text2.setText(dist);
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -350,7 +349,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3b.setText(pace.substring(pace.indexOf(":") + 1,
                     pace.lastIndexOf(":")));
             text3c.setText(pace.substring(pace.lastIndexOf(":") + 1));
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -363,7 +362,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3b.setText("");
             text3c.setText("");
             recyclerView.setAdapter(null);
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -371,10 +370,10 @@ public class FragRun extends Fragment implements View.OnClickListener {
         paceButton.setEnabled(true);
     }
 
-    public void setTheFocus() {
-        theFocus.setFocusableInTouchMode(true);
-        theFocus.requestFocus();
-    }
+//    public void setTheFocus() {
+//        theFocus.setFocusableInTouchMode(true);
+//        theFocus.requestFocus();
+//    }
 
     public void setSplits(double dist, double total) {
         String measurement = "Mile";

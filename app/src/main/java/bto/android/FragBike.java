@@ -69,12 +69,10 @@ public class FragBike extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_bike, container, false);
 
-        theFocus = (TextView) rootView.findViewById(R.id.Topline01);
+        //theFocus = (TextView) rootView.findViewById(R.id.toplineInfo);
         text1a = (EditText) rootView.findViewById(R.id.EditText01a);
         text1b = (EditText) rootView.findViewById(R.id.EditText01b);
         text1c = (EditText) rootView.findViewById(R.id.EditText01c);
-        //text1b.setFilters(new InputFilter[] { new InputFilterMinMax("0", "59") });
-        //text1c.setFilters(new InputFilter[] { new InputFilterMinMax("0", "59") });
         text2 = (EditText) rootView.findViewById(R.id.EditText02);
         text3a = (EditText) rootView.findViewById(R.id.EditText03a);
         text1a.setWidth(10);
@@ -86,7 +84,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         clearButton = (Button) rootView.findViewById(R.id.BikeClearButton);
-        clearButton.setTextColor(getResources().getColor(R.color.darkGrey));
         clearButton.setOnClickListener(this);
         timeButton = (Button) rootView.findViewById(R.id.BikeButton01);
         timeButton.setOnClickListener(this);
@@ -277,7 +274,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
 
 
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text3a.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -297,7 +294,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
                     Double.valueOf(ccc), Double.valueOf(ddd));
             text2.setText(dist);
 
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -321,7 +318,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             } else {
                 filler3speed.setText("mph");
             }
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -335,7 +332,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             timeButton.setEnabled(true);
             distanceButton.setEnabled(true);
             paceButton.setEnabled(true);
-            this.setTheFocus();
+            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -343,10 +340,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
         paceButton.setEnabled(true);
     }
 
-    public void setTheFocus() {
-        theFocus.setFocusableInTouchMode(true);
-        theFocus.requestFocus();
-    }
+
 
     public void setSplits(double speed, double dist) {
         //lv = (ListView) getActivity().findViewById(R.id.ListViewBike);

@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private FragRun fragRun;
     private FragBike fragBike;
     private FragSwim fragSwim;
+    private TextView topLine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
         prefs = getPreferences(Context.MODE_PRIVATE);
         tabPref = prefs.getInt("tabPref", 0);
-        System.out.println("TabPref Get in MainActivity:" + tabPref);
+        //System.out.println("TabPref Get in MainActivity:" + tabPref);
+
+        topLine = findViewById(R.id.toplineInfo);
 
         // Set up the fragment containers
         f1 = findViewById(R.id.fragment1);
@@ -67,6 +71,20 @@ public class MainActivity extends AppCompatActivity {
         button3 = findViewById(R.id.button3);
         button1 = Utils.returnStyledButton(activity, button1, true);
 
+//        if(tabPref==0){
+//            button1 = Utils.returnStyledButton(activity, button1, true);
+//            button1.setChecked(true);
+//            button1.setEnabled(true);
+//        }else if(tabPref==1){
+//            button2 = Utils.returnStyledButton(activity, button2, true);
+//            button2.setChecked(true);
+//            button2.setEnabled(true);
+//        }else{
+//            button3 = Utils.returnStyledButton(activity, button3, true);
+//            button3.setChecked(true);
+//            button3.setEnabled(true);
+//        }
+
         // Add activity type fragments to the containers
         FragmentManager manager = getSupportFragmentManager();
         fragRun = new FragRun();
@@ -75,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
         manager.beginTransaction().replace(R.id.fragment1, fragRun, "fragmentone").commit();
         manager.beginTransaction().replace(R.id.fragment2, fragBike, "fragmenttwo").commit();
         manager.beginTransaction().replace(R.id.fragment3, fragSwim, "fragmentthree").commit();
-
 
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
@@ -90,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
                         button1 = Utils.returnStyledButton(activity, button1, true);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, false);
+                        topLine.setText(R.string.helpText);
+//                        SharedPreferences.Editor editor = prefs.edit().putInt(
+//                                "tabPref", 0);
+//                        editor.apply();
                     }
                     if (checkedId == button2.getId()) {
                         Log.d("INFO", "Bike pressed " + isChecked);
@@ -99,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, true);
                         button3 = Utils.returnStyledButton(activity, button3, false);
+                        topLine.setText(R.string.helpTextBike);
+//                        SharedPreferences.Editor editor = prefs.edit().putInt(
+//                                "tabPref", 1);
+//                        editor.apply();
                     }
                     if (checkedId == button3.getId()) {
                         Log.d("INFO", "Swim pressed " + isChecked);
@@ -108,11 +133,22 @@ public class MainActivity extends AppCompatActivity {
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, true);
+                        topLine.setText(R.string.helpText);
+//                        SharedPreferences.Editor editor = prefs.edit().putInt(
+//                                "tabPref", 2);
+//                        editor.apply();
                     }
                 }
             }
         });
 
+//        Button crashButton = findViewById(R.id.crashButton);
+//        crashButton.setText("Test Crash");
+//        crashButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                throw new RuntimeException("Test Crash"); // Force a crash
+//            }
+//        });
 
     }
 
