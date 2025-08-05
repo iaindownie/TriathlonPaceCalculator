@@ -40,26 +40,8 @@ public class FragBike extends Fragment implements View.OnClickListener {
     private Button distanceButton;
     private Button paceButton;
     private ToggleButton toggle;
-
-    private TextView theFocus;
     private TextView filler3speed;
     private boolean isMetric;
-
-    /**
-     * The fragment argument representing the section number for this fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
-    /**
-     * Returns a new instance of this fragment for the given section number.
-     */
-    public static FragBike newInstance(int sectionNumber) {
-        FragBike fragment = new FragBike();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     public FragBike() {
     }
@@ -69,7 +51,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_bike, container, false);
 
-        //theFocus = (TextView) rootView.findViewById(R.id.toplineInfo);
         text1a = (EditText) rootView.findViewById(R.id.EditText01a);
         text1b = (EditText) rootView.findViewById(R.id.EditText01b);
         text1c = (EditText) rootView.findViewById(R.id.EditText01c);
@@ -272,9 +253,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
             text1b.setText(time.substring(time.indexOf(":") + 1,
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
-
-
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text3a.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -293,8 +271,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(ddd));
             text2.setText(dist);
-
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -318,7 +294,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
             } else {
                 filler3speed.setText("mph");
             }
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -332,7 +307,6 @@ public class FragBike extends Fragment implements View.OnClickListener {
             timeButton.setEnabled(true);
             distanceButton.setEnabled(true);
             paceButton.setEnabled(true);
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -341,9 +315,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
     }
 
 
-
     public void setSplits(double speed, double dist) {
-        //lv = (ListView) getActivity().findViewById(R.id.ListViewBike);
         ArrayList<String> results = new ArrayList<String>();
         results.add("Conversion summary");
         if (isMetric) {

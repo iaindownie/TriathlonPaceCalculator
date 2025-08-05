@@ -40,26 +40,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private Button timeButton;
     private Button distanceButton;
     private Button paceButton;
-
     private ToggleButton toggle;
-
-    //private TextView theFocus;
     private boolean isMetric;
-    /**
-     * The fragment argument representing the section number for this fragment.
-     */
-    private static final String ARG_SECTION_NUMBER = "section_number";
-
-    /**
-     * Returns a new instance of this fragment for the given section number.
-     */
-    public static FragRun newInstance(int sectionNumber) {
-        FragRun fragment = new FragRun();
-        Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     public FragRun() {
     }
@@ -69,7 +51,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_run, container, false);
 
-        //theFocus = (TextView) rootView.findViewById(R.id.toplineInfo);
         text1a = (EditText) rootView.findViewById(R.id.EditText01a);
         text1b = (EditText) rootView.findViewById(R.id.EditText01b);
         text1c = (EditText) rootView.findViewById(R.id.EditText01c);
@@ -77,14 +58,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
         text3a = (EditText) rootView.findViewById(R.id.EditText03a);
         text3b = (EditText) rootView.findViewById(R.id.EditText03b);
         text3c = (EditText) rootView.findViewById(R.id.EditText03c);
-        // text1b.setFilters(new InputFilter[] { new InputFilterMinMax("0",
-        // "59") });
-        // text1c.setFilters(new InputFilter[] { new InputFilterMinMax("0",
-        // "59") });
-        // text3b.setFilters(new InputFilter[] { new InputFilterMinMax("0",
-        // "59") });
-        // text3c.setFilters(new InputFilter[] { new InputFilterMinMax("0",
-        // "59") });
         text1a.setWidth(10);
         text1b.setWidth(10);
         text1c.setWidth(10);
@@ -300,8 +273,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text1b.setText(time.substring(time.indexOf(":") + 1,
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
-
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text3c.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -327,7 +298,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
                     Double.valueOf(ccc), Double.valueOf(ddd),
                     Double.valueOf(eee), Double.valueOf(fff));
             text2.setText(dist);
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -349,7 +319,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3b.setText(pace.substring(pace.indexOf(":") + 1,
                     pace.lastIndexOf(":")));
             text3c.setText(pace.substring(pace.lastIndexOf(":") + 1));
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -362,7 +331,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3b.setText("");
             text3c.setText("");
             recyclerView.setAdapter(null);
-            //this.setTheFocus();
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -370,10 +338,6 @@ public class FragRun extends Fragment implements View.OnClickListener {
         paceButton.setEnabled(true);
     }
 
-//    public void setTheFocus() {
-//        theFocus.setFocusableInTouchMode(true);
-//        theFocus.requestFocus();
-//    }
 
     public void setSplits(double dist, double total) {
         String measurement = "Mile";
