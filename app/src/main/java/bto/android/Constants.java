@@ -8,6 +8,7 @@ public class Constants {
 	public static double toKmConversion = 1.609344;
 	public static double toYardConversion = 1.093613;
 	public static DecimalFormat twoDecPoints = new DecimalFormat("00.00");
+	public static final String BUILD_TYPE_RELEASE = "release";
 	
 
 	/**
