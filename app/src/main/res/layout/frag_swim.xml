@@ -214,6 +214,17 @@
         android:layout_margin="@dimen/space_sm"
         android:orientation="horizontal">
 
+        <ToggleButton
+            android:id="@+id/togglebuttonSwim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_md"
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textOff="@string/swimConversionButton2"
+            android:textOn="@string/swimConversionButton1"
+            android:textSize="12sp" />
+
         <Button
             android:id="@+id/ClearButton"
             android:layout_width="wrap_content"

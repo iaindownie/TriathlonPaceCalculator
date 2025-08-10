@@ -43,6 +43,7 @@
     <string name="about_title">"Swim/Bike/Run Calculator "</string>
     <string name="okay">Okay</string>
     <string name="per100m">/100m</string>
+    <string name="yards">yards</string>
 
 
 </resources>

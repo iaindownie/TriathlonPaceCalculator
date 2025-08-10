@@ -11,9 +11,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -39,6 +41,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
     private Button distanceButton;
     private Button paceButton;
     private TextView filler3swim;
+    private ToggleButton toggle;
     private boolean isMetric;
 
     public FragSwim() {
@@ -99,6 +102,77 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+
+        toggle = (ToggleButton) rootView.findViewById(R.id.togglebuttonSwim);
+        toggle.setChecked(true);
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView,
+                                         boolean isChecked) {
+                if (isChecked) {
+                    // The toggle is enabled
+                    text2.setHint(getString(R.string.metres));
+                    adapter = ArrayAdapter.createFromResource(getActivity(),
+                            R.array.metricSwim,
+                            android.R.layout.simple_spinner_item);
+                    isMetric = true;
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+                        public void onItemSelected(AdapterView<?> arg0,
+                                                   View arg1, int selectedPosition, long arg3) {
+
+                            if (selectedPosition == 0) {
+                                text2.setText("");
+                                recyclerView.setAdapter(null);
+                            } else {
+                                String str = getPresetDistance(
+                                        selectedPosition, isMetric);
+                                text2.setText(str);
+                                distanceButton.setEnabled(false);
+                                text2.setFocusable(true);
+                                text2.setFocusableInTouchMode(true);
+                                text2.requestFocus();
+                            }
+                        }
+
+                        public void onNothingSelected(AdapterView<?> arg0) {
+                        }
+                    });
+                } else {
+                    // The toggle is disabled
+                    text2.setHint(getString(R.string.yards));
+                    adapter = ArrayAdapter.createFromResource(getActivity(),
+                            R.array.imperialSwim,
+                            android.R.layout.simple_spinner_item);
+                    isMetric = false;
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+                    spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+                        public void onItemSelected(AdapterView<?> arg0,
+                                                   View arg1, int selectedPosition, long arg3) {
+
+                            if (selectedPosition == 0) {
+                                text2.setText("");
+                                recyclerView.setAdapter(null);
+                            } else {
+                                String str = getPresetDistance(
+                                        selectedPosition, isMetric);
+                                text2.setText(str);
+                                distanceButton.setEnabled(false);
+                                text2.setFocusable(true);
+                                text2.setFocusableInTouchMode(true);
+                                text2.requestFocus();
+                            }
+                        }
+
+                        public void onNothingSelected(AdapterView<?> arg0) {
+                        }
+                    });
+                }
             }
         });
 
