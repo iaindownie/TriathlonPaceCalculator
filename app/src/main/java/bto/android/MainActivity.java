@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // Unused for now
         prefs = getPreferences(Context.MODE_PRIVATE);
         tabPref = prefs.getInt("tabPref", 0);
+        Log.d("INFO", "TabPref: " + tabPref);
 
         // Help line above fields
         topLine = findViewById(R.id.toplineInfo);
@@ -82,6 +84,30 @@ public class MainActivity extends AppCompatActivity {
         manager.beginTransaction().replace(R.id.fragment2, fragBike, "fragmenttwo").commit();
         manager.beginTransaction().replace(R.id.fragment3, fragSwim, "fragmentthree").commit();
 
+        if (tabPref == 0) {
+            button1 = Utils.returnStyledButton(activity, button1, true);
+            button2 = Utils.returnStyledButton(activity, button2, false);
+            button3 = Utils.returnStyledButton(activity, button3, false);
+            f1.setVisibility(View.VISIBLE);
+            f2.setVisibility(View.GONE);
+            f3.setVisibility(View.GONE);
+        } else if (tabPref == 1) {
+            button1 = Utils.returnStyledButton(activity, button1, false);
+            button2 = Utils.returnStyledButton(activity, button2, true);
+            button3 = Utils.returnStyledButton(activity, button3, false);
+            f1.setVisibility(View.GONE);
+            f2.setVisibility(View.VISIBLE);
+            f3.setVisibility(View.GONE);
+        } else {
+            button1 = Utils.returnStyledButton(activity, button1, false);
+            button2 = Utils.returnStyledButton(activity, button2, false);
+            button3 = Utils.returnStyledButton(activity, button3, true);
+            f1.setVisibility(View.GONE);
+            f2.setVisibility(View.GONE);
+            f3.setVisibility(View.VISIBLE);
+        }
+
+
         // Set up toggle button listener
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
@@ -95,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, false);
                         topLine.setText(R.string.helpText);
+
+                        SharedPreferences.Editor editor = prefs.edit().putInt(
+                                "tabPref", 0);
+                        editor.apply();
                         mFirebaseAnalytics.logEvent("Run_Clicked", new Bundle());
                     }
                     if (checkedId == button2.getId()) {
@@ -105,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, true);
                         button3 = Utils.returnStyledButton(activity, button3, false);
                         topLine.setText(R.string.helpTextBike);
+
+                        SharedPreferences.Editor editor = prefs.edit().putInt(
+                                "tabPref", 1);
+                        editor.apply();
                         mFirebaseAnalytics.logEvent("Bike_Clicked", new Bundle());
                     }
                     if (checkedId == button3.getId()) {
@@ -115,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, true);
                         topLine.setText(R.string.helpText);
+
+                        SharedPreferences.Editor editor = prefs.edit().putInt(
+                                "tabPref", 2);
+                        editor.apply();
                         mFirebaseAnalytics.logEvent("Swim_Clicked", new Bundle());
                     }
                 }

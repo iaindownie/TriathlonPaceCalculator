@@ -387,6 +387,8 @@ public class FragBike extends Fragment implements View.OnClickListener {
                 return "90.12326";
             else if (preset == 4)
                 return "40";
+            else if (preset == 5)
+                return "20";
             else
                 return "";
         } else {
@@ -398,6 +400,8 @@ public class FragBike extends Fragment implements View.OnClickListener {
                 return "56";
             else if (preset == 4)
                 return "24.85485";
+            else if (preset == 5)
+                return "12.42742";
             else
                 return "";
         }

@@ -27,6 +27,7 @@
         <item>Century (100miles)</item>
         <item>1/2 Ironman (56miles)</item>
         <item>Olympic Tri (24.85ml)</item>
+        <item>Sprint Tri (12.43ml)</item>
     </string-array>
     
     <string-array name="metricBike">
@@ -35,6 +36,7 @@
         <item>Century (160km)</item>
         <item>1/2 Ironman (90km)</item>
         <item>Olympic Tri (40km)</item>
+        <item>Sprint Tri (20ml)</item>
     </string-array>
     
     <string-array name="imperialSwim">
