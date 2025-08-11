@@ -55,6 +55,8 @@
         android:gravity="center"
         android:paddingTop="@dimen/space_xs"
         android:paddingBottom="@dimen/space_xs"
+        android:paddingStart="@dimen/space_sm"
+        android:paddingEnd="@dimen/space_sm"
         android:text="@string/helpText"
         android:textSize="13sp" />
 

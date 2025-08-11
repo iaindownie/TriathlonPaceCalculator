@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_section1">Courir</string>
+    <string name="title_section2">Vélo</string>
+    <string name="title_section3">Nager</string>
+    <string name="about">À propos</string>
+    <string name="instructions">Aide</string>
+    <string name="hourName">Heure</string>
+    <string name="minsName">Minutes</string>
+    <string name="secsName">Secondes</string>
+
+    <string name="milesSpeedName">Vitesse (mph)</string>
+    <string name="metres">mètres</string>
+    <string name="kmSpeedName">Vitesse (kph)</string>
+    <string name="PaceMilesDistance">Entrez la distance - miles</string>
+    <string name="PaceKmDistance">Entrez la distance - kilometres</string>
+    <string name="calcTimeButton">Obtenir du temps</string>
+    <string name="calcDistButton">Obtenir la distance</string>
+    <string name="calcPaceButton">Obtenez le rythme</string>
+    <string name="calcSpeedButton">Obtenez de la vitesse</string>
+    <string name="preset_distance">Distance prédéfinie</string>
+    <string name="clearButtonText">Effacer les champs</string>
+    <string name="runConversionButton1">Kms (passer aux miles)</string>
+    <string name="runConversionButton2">Miles (passer aux kms)</string>
+    <string name="bikeConversionButton1">Kms (passer aux miles)</string>
+    <string name="bikeConversionButton2">Miles (passer aux kms)</string>
+    <string name="swimConversionButton1">Metres (switch to yards)</string>
+    <string name="swimConversionButton2">Yards (switch to metres)</string>
+    <string name="helpText">Ajoutez 2 valeurs pour obtenir la 3ème (par exemple, temps + distance >> rythme)</string>
+    <string name="helpTextBike">Ajoutez 2 valeurs pour obtenir la 3ème (par exemple, temps + distance >> vitesse)</string>
+    <!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
+    <string name="about_title">Calculateur de nager/vélo/courir</string>
+    <string name="okay">D\'accord</string>
+    <string name="how_to_use">Comment utiliser</string>
+</resources>

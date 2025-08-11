@@ -29,7 +29,7 @@ public class Utils {
         spawny.append("This is a Spawny App!\n\n");
 
         new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
-                .setTitle(activity.getString(R.string.about_title) + pInfo.versionName)
+                .setTitle(activity.getString(R.string.about_title) + " " + pInfo.versionName)
                 .setMessage(spawny.toString())
                 .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
                     @Override
@@ -49,7 +49,7 @@ public class Utils {
         sb.append("use the dropdown to select common run distances) and then click 'get pace'!\n\n");
 
         new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
-                .setTitle("How to use")
+                .setTitle(R.string.how_to_use)
                 .setMessage(sb.toString())
                 .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
                     @Override

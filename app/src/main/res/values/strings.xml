@@ -1,24 +1,23 @@
 <resources>
-    <string name="app_name">Pace Calculator</string>
+    <string name="app_name" translatable="false">Pace Calculator</string>
     <string name="title_section1">Run</string>
     <string name="title_section2">Bike</string>
     <string name="title_section3">Swim</string>
-    <string name="title_section4">Mi&#60;&#62;Km</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_section4" translatable="false">Mi&#60;&#62;Km</string>
     <string name="about">About</string>
     <string name="instructions">Help</string>
 
     <string name="hourName">Hour</string>
     <string name="minsName">Mins</string>
     <string name="secsName">Secs</string>
-    <string name="hh">hh</string>
-    <string name="mm">mm</string>
-    <string name="ss">ss</string>
-    <string name="km">km</string>
-    <string name="mile">mile</string>
+    <string name="hh" translatable="false">hh</string>
+    <string name="mm" translatable="false">mm</string>
+    <string name="ss" translatable="false">ss</string>
+    <string name="km" translatable="false">km</string>
+    <string name="mile" translatable="false">mile</string>
     <string name="milesSpeedName">Speed (mph)</string>
-    <string name="kph">kph</string>
-    <string name="mph">mph</string>
+    <string name="kph" translatable="false">kph</string>
+    <string name="mph" translatable="false">mph</string>
     <string name="metres">metres</string>
     <string name="kmSpeedName">Speed (kph)</string>
     <string name="PaceMilesDistance">Enter distance - miles</string>
@@ -27,8 +26,7 @@
     <string name="calcDistButton">Get Dist</string>
     <string name="calcPaceButton">Get Pace</string>
     <string name="calcSpeedButton">Get Speed</string>
-    <string name="dist_prompt">Choose a measure</string>
-    <string name="Presets">Presets</string>
+    <string name="preset_distance">Preset distance</string>
     <string name="clearButtonText">Clear fields</string>
     <string name="runConversionButton1">Kms (switch to miles)</string>
     <string name="runConversionButton2">Miles (switch to kms)</string>
@@ -38,12 +36,12 @@
     <string name="swimConversionButton2">Yards (switch to metres)</string>
     <string name="helpText">Add 2 values to get 3rd (e.g. time + dist >> pace)</string>
     <string name="helpTextBike">Add 2 values to get 3rd (e.g. time + dist >> speed)</string>
-    <string name="helpTextConvert">Use arrows to convert in either direction</string>
-    <string name="Dismiss">Dismiss</string>
-    <string name="about_title">"Swim/Bike/Run Calculator "</string>
+<!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
+    <string name="about_title">Swim/Bike/Run Calculator</string>
     <string name="okay">Okay</string>
-    <string name="per100m">/100m</string>
-    <string name="yards">yards</string>
+    <string name="per100m" translatable="false">/100m</string>
+    <string name="yards" translatable="false">yards</string>
+    <string name="how_to_use">How to use</string>
 
 
 </resources>

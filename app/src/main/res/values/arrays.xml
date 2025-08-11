@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="imperialRun">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>Marathon (miles)</item>
         <item>20 miles</item>
         <item>1/2 marathon (miles)</item>
@@ -13,7 +13,7 @@
     </string-array>
 
     <string-array name="metricRun">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>Marathon (kms)</item>
         <item>30 km</item>
         <item>1/2 marathon (kms)</item>
@@ -22,7 +22,7 @@
     </string-array>
     
     <string-array name="imperialBike">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>Ironman (112miles)</item>
         <item>Century (100miles)</item>
         <item>1/2 Ironman (56miles)</item>
@@ -31,7 +31,7 @@
     </string-array>
     
     <string-array name="metricBike">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>Ironman (180km)</item>
         <item>Century (160km)</item>
         <item>1/2 Ironman (90km)</item>
@@ -40,7 +40,7 @@
     </string-array>
     
     <string-array name="imperialSwim">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>10km (10,936yds)</item>
         <item>IM (4,155yds)</item>
         <item>1/2 IM (2,077yds)</item>
@@ -54,7 +54,7 @@
     </string-array>
     
     <string-array name="metricSwim">
-        <item>Preset distance</item>
+        <item>@string/preset_distance</item>
         <item>10km</item>
         <item>IM (3.8km)</item>
         <item>1/2 IM (1900km)</item>

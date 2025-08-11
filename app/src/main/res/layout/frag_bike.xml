@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/space_sm"
             android:layout_weight="0.5"
-            android:prompt="@string/Presets"
+            android:prompt="@string/preset_distance"
             android:spinnerMode="dropdown" />
 
         <com.google.android.material.button.MaterialButton
