@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_section1">Correr</string>
+    <string name="title_section2">Bicicleta</string>
+    <string name="title_section3">Nadar</string>
+    <string name="about">Acerca de</string>
+    <string name="instructions">Ayuda</string>
+    <string name="hourName">Hora</string>
+    <string name="minsName">Minutos</string>
+    <string name="secsName">Segundos</string>
+
+    <string name="milesSpeedName">Velocidad (mph)</string>
+    <string name="kmSpeedName">Velocidad (kph)</string>
+    <string name="metres">metros</string>
+    <string name="PaceMilesDistance">Introduzca la distancia - millas</string>
+    <string name="PaceKmDistance">Introduzca la distancia - kilómetros</string>
+    <string name="calcTimeButton">Obtener tiempo</string>
+    <string name="calcDistButton">Obtenir distancia</string>
+    <string name="calcPaceButton">Obtenez ritmo</string>
+    <string name="calcSpeedButton">Obtenez velocidad</string>
+    <string name="preset_distance">Distancia preestablecida</string>
+    <string name="clearButtonText">Borrar campos</string>
+    <string name="runConversionButton1">Kms (cambiar a millas)</string>
+    <string name="runConversionButton2">Miles (cambiar a kms)</string>
+    <string name="bikeConversionButton1">Kms (cambiar a millas)</string>
+    <string name="bikeConversionButton2">Miles (cambiar a kms)</string>
+    <string name="swimConversionButton1">Metros (cambiar a yardas)</string>
+    <string name="swimConversionButton2">Yardas (cambiar a metros)</string>
+    <string name="helpTextGeneric">Suma 2 valores para obtener el tercero (por ejemplo, tiempo + distancia >> ritmo)</string>
+    <string name="helpTextBike">Suma 2 valores para obtener el tercero (por ejemplo, tiempo + distancia >> velocidad)</string>
+    <!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
+    <string name="about_title">Calculadora de natación/ciclismo/carrera</string>
+    <string name="okay">Bueno</string>
+    <string name="how_to_use">Como usar</string>
+    <string name="yards">yardas</string>
+
+    <string name="preset_imperial_run_marathon">Maratón (millas)</string>
+    <string name="preset_imperial_run_20">20 millas</string>
+    <string name="preset_imperial_run_half_marathon">1/2 maratón (millas)</string>
+    <string name="preset_imperial_run_10">10 millas</string>
+    <string name="preset_imperial_run_6">6.2 millas (10km)</string>
+    <string name="preset_imperial_run_5">5 millas</string>
+    <string name="preset_imperial_run_parkrun">3.1 millas (Parkrun)</string>
+
+    <string name="preset_metric_run_marathon">Maratón (km)</string>
+    <string name="preset_metric_run_30">30 km</string>
+    <string name="preset_metric_run_half_marathon">1/2 maratón (km)</string>
+    <string name="preset_metric_run_10">10 km</string>
+    <string name="preset_metric_run_parkrun">5km</string>
+
+    <string name="preset_imperial_bike_ironman">Ironman (112 millas)</string>
+    <string name="preset_imperial_bike_century">Siglo (100 millas)</string>
+    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 millas)</string>
+    <string name="preset_imperial_bike_olympic">Tri Olympique (24.85 millas)</string>
+    <string name="preset_imperial_bike_sprint">Tri Sprint (12.43 millas)</string>
+
+    <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
+    <string name="preset_metric_bike_century">Siglo (160 km)</string>
+    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_olympic">Tri Olímpico (40 km)</string>
+    <string name="preset_metric_bike_sprint">Tri Sprint (20 km)</string>
+
+    <string name="about_text">Una aplicación sencilla para ayudar a corredores, ciclistas y nadadores a calcular el ritmo o la velocidad y realizar predicciones para eventos futuros.\n\n¡Esta es una aplicación Spawny!\n\n</string>
+    <string name="help_content1">Esta aplicación está diseñada para devolver el tiempo, la distancia o el ritmo/velocidad esperados (según los campos que elija ingresar) y ayudar a realizar predicciones para eventos futuros.\n\n</string>
+    <string name="help_content2">Simplemente suma dos de los campos para calcular el campo restante. Por ejemplo, introduce el tiempo que quieres para completar una carrera, introduce una distancia manualmente (o usa el menú desplegable para seleccionar distancias de carrera comunes) y luego haz clic en "Obtener ritmo".\n\n</string>
+</resources>
