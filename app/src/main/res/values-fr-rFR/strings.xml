@@ -14,10 +14,10 @@
     <string name="metres">mètres</string>
     <string name="PaceMilesDistance">Entrez la distance - miles</string>
     <string name="PaceKmDistance">Entrez la distance - kilometres</string>
-    <string name="calcTimeButton">Obtenir du temps</string>
-    <string name="calcDistButton">Obtenir la distance</string>
-    <string name="calcPaceButton">Obtenez le rythme</string>
-    <string name="calcSpeedButton">Obtenez de la vitesse</string>
+    <string name="calcTimeButton">Obtenir temps</string>
+    <string name="calcDistButton">Obtenir distance</string>
+    <string name="calcPaceButton">Obtenez rythme</string>
+    <string name="calcSpeedButton">Obtenez vitesse</string>
     <string name="preset_distance">Distance prédéfinie</string>
     <string name="clearButtonText">Effacer les champs</string>
     <string name="runConversionButton1">Kms (passer aux miles)</string>
