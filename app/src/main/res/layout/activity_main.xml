@@ -57,7 +57,7 @@
         android:paddingBottom="@dimen/space_xs"
         android:paddingStart="@dimen/space_sm"
         android:paddingEnd="@dimen/space_sm"
-        android:text="@string/helpText"
+        android:text="@string/helpTextGeneric"
         android:textSize="13sp" />
 
     <FrameLayout

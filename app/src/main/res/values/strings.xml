@@ -34,7 +34,7 @@
     <string name="bikeConversionButton2">Miles (switch to kms)</string>
     <string name="swimConversionButton1">Metres (switch to yards)</string>
     <string name="swimConversionButton2">Yards (switch to metres)</string>
-    <string name="helpText">Add 2 values to get 3rd (e.g. time + dist >> pace)</string>
+    <string name="helpTextGeneric">Add 2 values to get 3rd (e.g. time + dist >> pace)</string>
     <string name="helpTextBike">Add 2 values to get 3rd (e.g. time + dist >> speed)</string>
 <!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
     <string name="about_title">Swim/Bike/Run Calculator</string>
@@ -43,5 +43,35 @@
     <string name="yards" translatable="false">yards</string>
     <string name="how_to_use">How to use</string>
 
+    <string name="preset_imperial_run_marathon">Marathon (miles)</string>
+    <string name="preset_imperial_run_20">20 miles</string>
+    <string name="preset_imperial_run_half_marathon">1/2 marathon (miles)</string>
+    <string name="preset_imperial_run_10">10 miles</string>
+    <string name="preset_imperial_run_6">6.2 miles (10km)</string>
+    <string name="preset_imperial_run_5">5 miles</string>
+    <string name="preset_imperial_run_parkrun">3.1 miles (Parkrun)</string>
+
+    <string name="preset_metric_run_marathon">Marathon (kms)</string>
+    <string name="preset_metric_run_30">30 km</string>
+    <string name="preset_metric_run_half_marathon">1/2 marathon (kms)</string>
+    <string name="preset_metric_run_10">10 kms</string>
+    <string name="preset_metric_run_parkrun">5 km</string>
+
+    <string name="preset_imperial_bike_ironman">Ironman (112 miles)</string>
+    <string name="preset_imperial_bike_century">Century (100 miles)</string>
+    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 miles)</string>
+    <string name="preset_imperial_bike_olympic">Olympic Tri (24.85 miles)</string>
+    <string name="preset_imperial_bike_sprint">Sprint Tri (12.43 miles)</string>
+
+    <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
+    <string name="preset_metric_bike_century">Century (160 km)</string>
+    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_olympic">Olympic Tri (40 km)</string>
+    <string name="preset_metric_bike_sprint">Sprint Tri (20 km)</string>
+
+    <string name="about_text">A simple app to help runners, cyclists and swimmers calculate pace or speed, and help make predictions for future events.\n\nThis is a Spawny App!\n\n</string>
+    <string name="help_content1">This app is designed to return expected time, distance or pace/speed (based on which fields to choose to enter), and help make predictions for future events.\n\n</string>
+    <string name="help_content2">Simply add two of the fields to calculate the remaining field. For example, enter a time you wish to complete a run in, enter a distance manually (or use the dropdown to select common run distances) and then click \'get pace\'!\n\n</string>
+<!--    <string name="help_text"></string>-->
 
 </resources>

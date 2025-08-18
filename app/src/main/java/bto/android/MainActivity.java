@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                         button1 = Utils.returnStyledButton(activity, button1, true);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, false);
-                        topLine.setText(R.string.helpText);
+                        topLine.setText(R.string.helpTextGeneric);
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
                                 "tabPref", 0);
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, true);
-                        topLine.setText(R.string.helpText);
+                        topLine.setText(R.string.helpTextGeneric);
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
                                 "tabPref", 2);

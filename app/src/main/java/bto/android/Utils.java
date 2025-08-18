@@ -24,9 +24,7 @@ public class Utils {
         }
 
         StringBuffer spawny = new StringBuffer();
-        spawny.append("A simple app to help runners, cyclists and swimmers calculate ");
-        spawny.append("pace or speed, and help make predictions for future events.\n\n");
-        spawny.append("This is a Spawny App!\n\n");
+        spawny.append(activity.getResources().getString(R.string.about_text));
 
         new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
                 .setTitle(activity.getString(R.string.about_title) + " " + pInfo.versionName)
@@ -42,11 +40,8 @@ public class Utils {
 
     public static void doHelpDialog(Activity activity) {
         StringBuffer sb = new StringBuffer();
-        sb.append("This app is designed to return expected time, distance or pace/speed ");
-        sb.append("(based on which fields to choose to enter), and help make predictions for future events.\n\n");
-        sb.append("Simply add two of the fields to calculate the remaining field. For example, ");
-        sb.append("enter a time you wish to complete a run in, enter a distance manually (or ");
-        sb.append("use the dropdown to select common run distances) and then click 'get pace'!\n\n");
+        sb.append(activity.getResources().getString(R.string.help_content1));
+        sb.append(activity.getResources().getString(R.string.help_content2));
 
         new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
                 .setTitle(R.string.how_to_use)

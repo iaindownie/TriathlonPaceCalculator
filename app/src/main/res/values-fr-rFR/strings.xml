@@ -26,10 +26,44 @@
     <string name="bikeConversionButton2">Miles (passer aux kms)</string>
     <string name="swimConversionButton1">Metres (switch to yards)</string>
     <string name="swimConversionButton2">Yards (switch to metres)</string>
-    <string name="helpText">Ajoutez 2 valeurs pour obtenir la 3ème (par exemple, temps + distance >> rythme)</string>
+    <string name="helpTextGeneric">Ajoutez 2 valeurs pour obtenir la 3ème (par exemple, temps + distance >> rythme)</string>
     <string name="helpTextBike">Ajoutez 2 valeurs pour obtenir la 3ème (par exemple, temps + distance >> vitesse)</string>
     <!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
     <string name="about_title">Calculateur de nager/vélo/courir</string>
     <string name="okay">D\'accord</string>
     <string name="how_to_use">Comment utiliser</string>
+
+
+    <string name="preset_imperial_run_marathon">Marathon (miles)</string>
+    <string name="preset_imperial_run_20">20 milles</string>
+    <string name="preset_imperial_run_half_marathon">1/2 marathon (miles)</string>
+    <string name="preset_imperial_run_10">10 milles</string>
+    <string name="preset_imperial_run_6">6.2 milles (10km)</string>
+    <string name="preset_imperial_run_5">5 milles</string>
+    <string name="preset_imperial_run_parkrun">3.1 milles (Parkrun)</string>
+
+    <string name="preset_metric_run_marathon">Marathon (km)</string>
+    <string name="preset_metric_run_30">30 km</string>
+    <string name="preset_metric_run_half_marathon">1/2 marathon (km)</string>
+    <string name="preset_metric_run_10">10 km</string>
+    <string name="preset_metric_run_parkrun">5km</string>
+
+    <string name="preset_imperial_bike_ironman">Ironman (112 milles)</string>
+    <string name="preset_imperial_bike_century">Siècle (100 milles)</string>
+    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 milles)</string>
+    <string name="preset_imperial_bike_olympic">Tri Olympique (24.85 milles)</string>
+    <string name="preset_imperial_bike_sprint">Tri Sprint (12.43 milles)</string>
+
+    <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
+    <string name="preset_metric_bike_century">Siècle (160 km)</string>
+    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_olympic">Tri Olympique (40 km)</string>
+    <string name="preset_metric_bike_sprint">Tri Sprint (20 km)</string>
+
+    <string name="about_text">Une application simple pour aider les coureurs, les cyclistes et les nageurs à calculer leur rythme ou leur vitesse et à faire des prédictions pour les événements futurs.\n\nCeci est une application Spawny !\n\n</string>
+    <string name="help_content1">Cette application est conçue pour renvoyer le temps, la distance ou le rythme/la vitesse attendus (en fonction des champs à saisir) et aider à faire des prédictions pour les événements futurs.\n\n</string>
+    <string name="help_content2">Ajoutez simplement deux champs pour calculer le champ restant. Par exemple, saisissez le temps que vous souhaitez pour terminer une course, saisissez une distance manuellement (ou utilisez le menu déroulant pour sélectionner des distances de course courantes), puis cliquez sur \'Obtenir le rythme\' !\n\n</string>
+<!--    <string name="help_text">Cette application est </string>-->
+<!--    conçue pour renvoyer le temps, la distance ou le rythme/la vitesse attendus (en fonction des champs à saisir) et aider à faire des prédictions pour les événements futurs.\n\nAjoutez simplement deux champs pour calculer le champ restant. Par exemple, saisissez le temps que vous souhaitez pour terminer une course, saisissez une distance manuellement (ou utilisez le menu déroulant pour sélectionner des distances de course courantes), puis cliquez sur \n\n-->
+<!--    Obtenir l\'allure !-->
 </resources>

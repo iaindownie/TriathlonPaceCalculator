@@ -3,40 +3,40 @@
 
     <string-array name="imperialRun">
         <item>@string/preset_distance</item>
-        <item>Marathon (miles)</item>
-        <item>20 miles</item>
-        <item>1/2 marathon (miles)</item>
-        <item>10 miles</item>
-        <item>6.2 miles (10km)</item>
-        <item>5 miles</item>
-        <item>3.1 miles (Parkrun)</item>
+        <item>@string/preset_imperial_run_marathon</item>
+        <item>@string/preset_imperial_run_20</item>
+        <item>@string/preset_imperial_run_half_marathon</item>
+        <item>@string/preset_imperial_run_10</item>
+        <item>@string/preset_imperial_run_6</item>
+        <item>@string/preset_imperial_run_5</item>
+        <item>@string/preset_imperial_run_parkrun</item>
     </string-array>
 
     <string-array name="metricRun">
         <item>@string/preset_distance</item>
-        <item>Marathon (kms)</item>
-        <item>30 km</item>
-        <item>1/2 marathon (kms)</item>
-        <item>10 km</item>
-        <item>5 km (Parkrun)</item>
+        <item>@string/preset_metric_run_marathon</item>
+        <item>@string/preset_metric_run_30</item>
+        <item>@string/preset_metric_run_half_marathon</item>
+        <item>@string/preset_metric_run_10</item>
+        <item>@string/preset_metric_run_parkrun</item>
     </string-array>
     
     <string-array name="imperialBike">
         <item>@string/preset_distance</item>
-        <item>Ironman (112miles)</item>
-        <item>Century (100miles)</item>
-        <item>1/2 Ironman (56miles)</item>
-        <item>Olympic Tri (24.85ml)</item>
-        <item>Sprint Tri (12.43ml)</item>
+        <item>@string/preset_imperial_bike_ironman</item>
+        <item>@string/preset_imperial_bike_century</item>
+        <item>@string/preset_imperial_bike_half_ironman</item>
+        <item>@string/preset_imperial_bike_olympic</item>
+        <item>@string/preset_imperial_bike_sprint</item>
     </string-array>
     
     <string-array name="metricBike">
         <item>@string/preset_distance</item>
-        <item>Ironman (180km)</item>
-        <item>Century (160km)</item>
-        <item>1/2 Ironman (90km)</item>
-        <item>Olympic Tri (40km)</item>
-        <item>Sprint Tri (20ml)</item>
+        <item>@string/preset_metric_bike_ironman</item>
+        <item>@string/preset_metric_bike_century</item>
+        <item>@string/preset_metric_bike_half_ironman</item>
+        <item>@string/preset_metric_bike_olympic</item>
+        <item>@string/preset_metric_bike_sprint</item>
     </string-array>
     
     <string-array name="imperialSwim">
