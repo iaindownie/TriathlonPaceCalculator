@@ -113,6 +113,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
                 if (isChecked) {
                     // The toggle is enabled
                     text2.setHint(getString(R.string.metres));
+                    filler3swim.setText(getString(R.string.per100m));
                     adapter = ArrayAdapter.createFromResource(getActivity(),
                             R.array.metricSwim,
                             android.R.layout.simple_spinner_item);
@@ -144,6 +145,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
                 } else {
                     // The toggle is disabled
                     text2.setHint(getString(R.string.yards));
+                    filler3swim.setText(getString(R.string.per100yds));
                     adapter = ArrayAdapter.createFromResource(getActivity(),
                             R.array.imperialSwim,
                             android.R.layout.simple_spinner_item);

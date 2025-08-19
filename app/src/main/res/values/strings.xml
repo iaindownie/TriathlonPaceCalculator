@@ -40,6 +40,7 @@
     <string name="about_title">Swim/Bike/Run Calculator</string>
     <string name="okay">Okay</string>
     <string name="per100m" translatable="false">/100m</string>
+    <string name="per100yds" translatable="false">/100yds</string>
     <string name="yards">yards</string>
     <string name="how_to_use">How to use</string>
 
