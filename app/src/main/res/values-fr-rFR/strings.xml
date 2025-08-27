@@ -63,4 +63,5 @@
     <string name="about_text">Une application simple pour aider les coureurs, les cyclistes et les nageurs à calculer leur rythme ou leur vitesse et à faire des prédictions pour les événements futurs.\n\nCeci est une application Spawny !\n\n</string>
     <string name="help_content1">Cette application est conçue pour renvoyer le temps, la distance ou le rythme/la vitesse attendus (en fonction des champs à saisir) et aider à faire des prédictions pour les événements futurs.\n\n</string>
     <string name="help_content2">Ajoutez simplement deux champs pour calculer le champ restant. Par exemple, saisissez le temps que vous souhaitez pour terminer une course, saisissez une distance manuellement (ou utilisez le menu déroulant pour sélectionner des distances de course courantes), puis cliquez sur \'Obtenir le rythme\' !\n\n</string>
+    <string name="tutorial_blue_bubble">Sélectionnez une activité, puis ajoutez une durée et une distance pour obtenir le rythme/la vitesse</string>
 </resources>

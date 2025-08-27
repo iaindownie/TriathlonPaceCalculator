@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +17,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.FragmentManager;
+import it.sephiroth.android.library.tooltip.Tooltip;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // Unused for now
         prefs = getPreferences(Context.MODE_PRIVATE);
         tabPref = prefs.getInt("tabPref", 0);
-        Log.d("INFO", "TabPref: " + tabPref);
+        //Log.d("INFO", "TabPref: " + tabPref);
 
         // Help line above fields
         topLine = findViewById(R.id.toplineInfo);
@@ -105,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
             f1.setVisibility(View.GONE);
             f2.setVisibility(View.GONE);
             f3.setVisibility(View.VISIBLE);
+        }
+
+        boolean tutorialBlueBubble = prefs.getBoolean("TUTORIAL_BLUE_BUBBLE", false);
+        if (!tutorialBlueBubble) {
+            Utils.handleBlueAlert(activity, button2, Tooltip.Gravity.BOTTOM, getString(R.string.tutorial_blue_bubble));
+
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("TUTORIAL_BLUE_BUBBLE", true);
+            editor.apply();
         }
 
 

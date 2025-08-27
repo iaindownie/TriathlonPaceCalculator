@@ -63,4 +63,5 @@
     <string name="about_text">Una aplicación sencilla para ayudar a corredores, ciclistas y nadadores a calcular el ritmo o la velocidad y realizar predicciones para eventos futuros.\n\n¡Esta es una aplicación Spawny!\n\n</string>
     <string name="help_content1">Esta aplicación está diseñada para devolver el tiempo, la distancia o el ritmo/velocidad esperados (según los campos que elija ingresar) y ayudar a realizar predicciones para eventos futuros.\n\n</string>
     <string name="help_content2">Simplemente suma dos de los campos para calcular el campo restante. Por ejemplo, introduce el tiempo que quieres para completar una carrera, introduce una distancia manualmente (o usa el menú desplegable para seleccionar distancias de carrera comunes) y luego haz clic en "Obtener ritmo".\n\n</string>
+    <string name="tutorial_blue_bubble">Seleccione una actividad, luego agregue un tiempo y una distancia para obtener el ritmo/velocidad</string>
 </resources>

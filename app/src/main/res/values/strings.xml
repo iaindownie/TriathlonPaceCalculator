@@ -73,6 +73,5 @@
     <string name="about_text">A simple app to help runners, cyclists and swimmers calculate pace or speed, and help make predictions for future events.\n\nThis is a Spawny App!\n\n</string>
     <string name="help_content1">This app is designed to return expected time, distance or pace/speed (based on which fields to choose to enter), and help make predictions for future events.\n\n</string>
     <string name="help_content2">Simply add two of the fields to calculate the remaining field. For example, enter a time you wish to complete a run in, enter a distance manually (or use the dropdown to select common run distances) and then click \'get pace\'!\n\n</string>
-<!--    <string name="help_text"></string>-->
-
+    <string name="tutorial_blue_bubble">Select an activity, then add a time and distance to get pace/speed</string>
 </resources>

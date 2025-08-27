@@ -116,4 +116,54 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+
+    <style name="ToolTipLayout16RadStyle" parent="ToolTipLayoutCustomStyle">
+        <item name="ttlm_padding">@dimen/space_lg</item>
+        <item name="ttlm_cornerRadius">@dimen/space_md</item>
+    </style>
+
+    <style name="ToolTipLayout8RadStyle" parent="ToolTipLayoutCustomStyle">
+        <item name="ttlm_padding">@dimen/space_md</item>
+        <item name="ttlm_cornerRadius">@dimen/space_sm</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <!-- Overriding styles for the blue help bubbles it.sephiroth.android.library -->
+    <style name="ToolTipLayoutCustomStyle">
+        <item name="ttlm_strokeColor">@color/base_color_info_strong</item>
+        <item name="ttlm_backgroundColor">@color/base_color_info_strong</item>
+        <item name="android:gravity">center</item>
+        <item name="ttlm_strokeWeight">1dip</item>
+        <item name="android:textSize">18sp</item>
+        <item name="ttlm_overlayStyle">@style/ToolTipOverlayCustomStyle</item>
+        <item name="android:textAppearance">@style/ToolTipTextAppearance</item>
+    </style>
+
+    <style name="ToolTipTextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/base_color_on_info_default</item>
+    </style>
+
+    <style name="ToolTipLayoutWarningStyle">
+        <item name="ttlm_strokeColor">@color/base_color_surface_container_warning</item>
+        <item name="ttlm_backgroundColor">@color/base_color_surface_container_warning</item>
+        <item name="android:layout_gravity">center</item>
+
+        <item name="ttlm_strokeWeight">1dip</item>
+        <item name="ttlm_padding">32dp</item>
+        <item name="ttlm_cornerRadius">8dp</item>
+        <item name="ttlm_overlayStyle">@style/ToolTipOverlayCustomStyle</item>
+        <item name="android:textAppearance">@style/ToolTipTextWarningAppearance</item>
+    </style>
+
+    <style name="ToolTipTextWarningAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/base_color_text_warning</item>
+    </style>
+
+    <!-- need to set these to zero/null to prevent flashy overlay -->
+    <style name="ToolTipOverlayCustomStyle">
+        <item name="android:color">@null</item>
+        <item name="ttlm_repeatCount">0</item>
+        <item name="ttlm_duration">0</item>
+    </style>
+
 </resources>
