@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private FragBike fragBike;
     private FragSwim fragSwim;
     private TextView topLine;
+
+    private FloatingActionButton coffeeFab;
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Help line above fields
         topLine = findViewById(R.id.toplineInfo);
+        coffeeFab = findViewById(R.id.coffeeFab);
 
         // Set up the fragment containers
         f1 = findViewById(R.id.fragment1);
@@ -165,6 +170,14 @@ public class MainActivity extends AppCompatActivity {
                         mFirebaseAnalytics.logEvent("Swim_Clicked", new Bundle());
                     }
                 }
+            }
+        });
+
+        coffeeFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("INFO", "Coffee Fab Clicked!");
+                // TODO New full page DialogFragment with graphics and explanation
             }
         });
 
