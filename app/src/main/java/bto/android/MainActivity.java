@@ -1,10 +1,10 @@
 package bto.android;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,11 +13,11 @@ import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.fragment.app.FragmentManager;
 import it.sephiroth.android.library.tooltip.Tooltip;
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private FragSwim fragSwim;
     private TextView topLine;
 
-    private FloatingActionButton coffeeFab;
+//    private FloatingActionButton coffeeFab;
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Help line above fields
         topLine = findViewById(R.id.toplineInfo);
-        coffeeFab = findViewById(R.id.coffeeFab);
+//        coffeeFab = findViewById(R.id.coffeeFab);
 
         // Set up the fragment containers
         f1 = findViewById(R.id.fragment1);
@@ -173,20 +173,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        coffeeFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("INFO", "Coffee Fab Clicked!");
-                // TODO New full page DialogFragment with graphics and explanation
-            }
-        });
+//        coffeeFab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("INFO", "Coffee Fab Clicked!");
+//                // TODO New full page DialogFragment with graphics and explanation
+//            }
+//        });
 
     }
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+        if(menu instanceof MenuBuilder){
+            MenuBuilder m = (MenuBuilder) menu;
+            //noinspection RestrictedApi
+            m.setOptionalIconsVisible(true);
+        }
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -205,6 +211,11 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.instructions) {
             Utils.doHelpDialog(activity);
             mFirebaseAnalytics.logEvent("Help_Clicked", new Bundle());
+            return true;
+        }
+        if (id == R.id.coffee) {
+            Utils.doHelpDialog(activity);
+            mFirebaseAnalytics.logEvent("Coffee_Clicked", new Bundle());
             return true;
         }
         return super.onOptionsItemSelected(item);
