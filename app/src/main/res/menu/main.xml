@@ -16,7 +16,7 @@
     <item
         android:id="@+id/coffee"
         android:orderInCategory="200"
-        android:title="Buy me a coffee"
+        android:title="@string/buy_me_a_coffee"
         android:icon="@drawable/bmc_logo"
         app:showAsAction="never" />
 </menu>

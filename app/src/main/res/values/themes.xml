@@ -166,4 +166,9 @@
         <item name="ttlm_duration">0</item>
     </style>
 
+    <style name="FullScreenDialogStyle">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
 </resources>

@@ -74,4 +74,7 @@
     <string name="help_content1">This app is designed to return expected time, distance or pace/speed (based on which fields to choose to enter), and help make predictions for future events.\n\n</string>
     <string name="help_content2">Simply add two of the fields to calculate the remaining field. For example, enter a time you wish to complete a run in, enter a distance manually (or use the dropdown to select common run distances) and then click \'get pace\'!\n\n</string>
     <string name="tutorial_blue_bubble">Select an activity, then add a time and distance to get pace/speed</string>
+    <string name="buy_me_a_coffee">Buy me a coffee</string>
+    <string name="coffee_text1">If you find Triathlon Pace Calculator useful, why not buy me a coffee (click on button below)?</string>
+    <string name="coffee_text2">I\'m committed to keep the app free to download and advert free, and a coffee will keep me refreshed while I maintain and improve to app.</string>
 </resources>

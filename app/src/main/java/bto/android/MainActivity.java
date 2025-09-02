@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        if(menu instanceof MenuBuilder){
+        if (menu instanceof MenuBuilder) {
             MenuBuilder m = (MenuBuilder) menu;
             //noinspection RestrictedApi
             m.setOptionalIconsVisible(true);
@@ -214,11 +214,16 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.coffee) {
-            Utils.doHelpDialog(activity);
+            showCoffeeFragment();
             mFirebaseAnalytics.logEvent("Coffee_Clicked", new Bundle());
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showCoffeeFragment() {
+        CoffeeDialogFragment coffeeDialogFragment = new CoffeeDialogFragment();
+        coffeeDialogFragment.show(getSupportFragmentManager(), CoffeeDialogFragment.TAG);
     }
 
 }

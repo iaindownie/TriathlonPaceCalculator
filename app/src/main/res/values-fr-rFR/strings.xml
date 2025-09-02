@@ -64,4 +64,9 @@
     <string name="help_content1">Cette application est conçue pour renvoyer le temps, la distance ou le rythme/la vitesse attendus (en fonction des champs à saisir) et aider à faire des prédictions pour les événements futurs.\n\n</string>
     <string name="help_content2">Ajoutez simplement deux champs pour calculer le champ restant. Par exemple, saisissez le temps que vous souhaitez pour terminer une course, saisissez une distance manuellement (ou utilisez le menu déroulant pour sélectionner des distances de course courantes), puis cliquez sur \'Obtenir le rythme\' !\n\n</string>
     <string name="tutorial_blue_bubble">Sélectionnez une activité, puis ajoutez une durée et une distance pour obtenir le rythme/la vitesse</string>
+
+    <string name="buy_me_a_coffee">Achetez-moi un café</string>
+    <string name="coffee_text1">Si vous trouvez le calculateur de rythme de triathlon utile, pourquoi ne pas m\'offrir un café (cliquez sur le bouton ci-dessous)?</string>
+    <string name="coffee_text2">Je m\'engage à garder l\'application gratuite à télécharger et sans publicité, et un café ou trois me permettront de rester rafraîchi pendant que je maintiens et améliore l\'application.</string>
+
 </resources>

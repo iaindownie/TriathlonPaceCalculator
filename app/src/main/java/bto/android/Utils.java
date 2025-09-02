@@ -2,9 +2,11 @@ package bto.android;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.view.View;
 
@@ -83,7 +85,7 @@ public class Utils {
                                 .insidePolicy(true, false)
                                 .outsidePolicy(true, false), 10000)
                         .text(string)
-                        .maxWidth(metrics.widthPixels/2)
+                        .maxWidth(metrics.widthPixels / 2)
                         .withStyleId(R.style.ToolTipLayout8RadStyle)
                         .typeface(Typeface.DEFAULT_BOLD)
                         .withArrow(true)
@@ -91,5 +93,11 @@ public class Utils {
                         .build()
         ).show();
 
+    }
+
+    public static void openURL(String url, Activity activity) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        activity.startActivity(intent);
     }
 }

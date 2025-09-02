@@ -64,4 +64,9 @@
     <string name="help_content1">Esta aplicación está diseñada para devolver el tiempo, la distancia o el ritmo/velocidad esperados (según los campos que elija ingresar) y ayudar a realizar predicciones para eventos futuros.\n\n</string>
     <string name="help_content2">Simplemente suma dos de los campos para calcular el campo restante. Por ejemplo, introduce el tiempo que quieres para completar una carrera, introduce una distancia manualmente (o usa el menú desplegable para seleccionar distancias de carrera comunes) y luego haz clic en "Obtener ritmo".\n\n</string>
     <string name="tutorial_blue_bubble">Seleccione una actividad, luego agregue un tiempo y una distancia para obtener el ritmo/velocidad</string>
+
+    <string name="buy_me_a_coffee">Cómprame un café</string>
+    <string name="coffee_text1">Si te resulta útil la Calculadora de ritmo de triatlón, ¿por qué no me invitas a un café (haz clic en el botón a continuación)?</string>
+    <string name="coffee_text2">Me comprometo a mantener la aplicación gratuita para su descarga y sin publicidad, y un café o tres me mantendrán fresco mientras mantengo y mejoro la aplicación.</string>
+
 </resources>
