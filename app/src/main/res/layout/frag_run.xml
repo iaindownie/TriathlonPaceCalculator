@@ -290,6 +290,19 @@
             android:layout_height="wrap_content"
             android:paddingBottom="10dp" />
 
+        <RelativeLayout
+            android:id="@+id/PredictionsRunContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/PredictionsRun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
     </LinearLayout>
 
 </LinearLayout>

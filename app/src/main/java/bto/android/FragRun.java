@@ -3,6 +3,7 @@ package bto.android;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
@@ -43,7 +45,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private EditText text3c;
     private Spinner spinner;
     private ArrayAdapter<CharSequence> adapter;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView, predictionsRecyclerView;
     private Button clearButton;
     private Button timeButton;
     private Button distanceButton;
@@ -51,6 +53,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private ToggleButton toggle;
     private boolean isMetric;
     private LinearLayout runResultsContainer;
+    private RelativeLayout predictionsContainer;
     private MaterialButtonToggleGroup materialButtonToggleGroup;
     private MaterialButton button1, button2;
     private Activity activity;
@@ -87,6 +90,11 @@ public class FragRun extends Fragment implements View.OnClickListener {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        predictionsRecyclerView = rootView.findViewById(R.id.ListViewRun);
+        RecyclerView.LayoutManager pLayoutManager = new LinearLayoutManager(activity);
+        predictionsRecyclerView.setLayoutManager(mLayoutManager);
+        predictionsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         clearButton = (Button) rootView.findViewById(R.id.ClearButton);
         clearButton.setOnClickListener(this);
@@ -148,6 +156,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                                 text2.setText("");
                                 runResultsContainer.setVisibility(GONE);
                                 recyclerView.setAdapter(null);
+                                predictionsRecyclerView.setAdapter(null);
                             } else {
                                 String str = getPresetDistance(
                                         selectedPosition, isMetric);
@@ -180,6 +189,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                                 text2.setText("");
                                 runResultsContainer.setVisibility(GONE);
                                 recyclerView.setAdapter(null);
+                                predictionsRecyclerView.setAdapter(null);
                             } else {
                                 String str = getPresetDistance(
                                         selectedPosition, isMetric);
@@ -377,6 +387,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3c.setText("");
             runResultsContainer.setVisibility(GONE);
             recyclerView.setAdapter(null);
+            predictionsRecyclerView.setAdapter(null);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -389,6 +400,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
         String measurement = getString(R.string.mile_capitilised);
         if (isMetric)
             measurement = getString(R.string.kilometre_capitilised);
+
         ArrayList<String> results = new ArrayList();
         results.add(measurement + " " + getString(R.string.splits_text));
         double pace = (total / dist) / 60;
@@ -401,6 +413,21 @@ public class FragRun extends Fragment implements View.OnClickListener {
         runResultsContainer.setVisibility(VISIBLE);
         ResultsRecycler rr = new ResultsRecycler(results);
         recyclerView.setAdapter(rr);
+
+        ArrayList<String> predictions = new ArrayList();
+        predictions.add(measurement + " " + getString(R.string.splits_text));
+
+        Log.d("INFO", "" + dist);
+        Log.d("INFO", "" + (total/60));
+        Log.d("INFO", "" + 10.0 / dist);
+        int dd = new Double(10.0 / dist).intValue();
+        Log.d("INFO", "" + dd);
+        double pow = Math.pow(dd, 1.06);
+        Log.d("INFO", "" + pow);
+        Log.d("INFO", "" + ((total/60) * pow));
+
+        //predictions.add();
+
     }
 
     private String getGoodTimeEndValues(double val) {
