@@ -69,4 +69,9 @@
     <string name="coffee_text1">Si te resulta útil la Calculadora de ritmo de triatlón, ¿por qué no me invitas a un café (haz clic en el botón a continuación)?</string>
     <string name="coffee_text2">Me comprometo a mantener la aplicación gratuita para su descarga y sin publicidad, y un café o tres me mantendrán fresco mientras mantengo y mejoro la aplicación.</string>
 
+    <string name="mile_capitilised">Milla</string>
+    <string name="kilometre_capitilised">Kilómetro</string>
+    <string name="splits_text">fracciones (redondeadas a segundos)</string>
+    <string name="last_split">Última división</string>
+    <string name="splits">Divisiones</string>
 </resources>

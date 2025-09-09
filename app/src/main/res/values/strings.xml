@@ -36,7 +36,7 @@
     <string name="swimConversionButton2">Yards (switch to metres)</string>
     <string name="helpTextGeneric">Add 2 values to get 3rd (e.g. time + dist >> pace)</string>
     <string name="helpTextBike">Add 2 values to get 3rd (e.g. time + dist >> speed)</string>
-<!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
+    <!--    <string name="helpTextConvert">Use arrows to convert in either direction</string>-->
     <string name="about_title">Swim/Bike/Run Calculator</string>
     <string name="okay">Okay</string>
     <string name="per100m" translatable="false">/100m</string>
@@ -77,4 +77,10 @@
     <string name="buy_me_a_coffee">Buy me a coffee</string>
     <string name="coffee_text1">If you find Triathlon Pace Calculator useful, why not buy me a coffee (click on button below)?</string>
     <string name="coffee_text2">I\'m committed to keep the app free to download and advert free, and a coffee or three will keep me refreshed while I maintain and improve to app.</string>
+
+    <string name="mile_capitilised">Mile</string>
+    <string name="kilometre_capitilised">Kilometre</string>
+    <string name="splits_text">splits (rounded to seconds)</string>
+    <string name="last_split">Last split</string>
+    <string name="splits">Splits</string>
 </resources>

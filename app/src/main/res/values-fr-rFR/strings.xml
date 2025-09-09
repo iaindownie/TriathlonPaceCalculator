@@ -69,4 +69,9 @@
     <string name="coffee_text1">Si vous trouvez le calculateur de rythme de triathlon utile, pourquoi ne pas m\'offrir un café (cliquez sur le bouton ci-dessous)?</string>
     <string name="coffee_text2">Je m\'engage à garder l\'application gratuite à télécharger et sans publicité, et un café ou trois me permettront de rester rafraîchi pendant que je maintiens et améliore l\'application.</string>
 
+    <string name="mile_capitilised">Mile</string>
+    <string name="kilometre_capitilised">kilomètre</string>
+    <string name="splits_text">divisions (arrondis à la seconde)</string>
+    <string name="last_split">Dernière scission</string>
+    <string name="splits">Divisions</string>
 </resources>

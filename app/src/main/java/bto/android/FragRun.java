@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
@@ -23,6 +24,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import bto.android.adapters.ResultsRecycler;
+
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
 
 public class FragRun extends Fragment implements View.OnClickListener {
 
@@ -42,6 +46,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private Button paceButton;
     private ToggleButton toggle;
     private boolean isMetric;
+    private LinearLayout runResultsContainer;
 
     public FragRun() {
     }
@@ -61,6 +66,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
         text1a.setWidth(10);
         text1b.setWidth(10);
         text1c.setWidth(10);
+        runResultsContainer = rootView.findViewById(R.id.runResultsContainer);
+        runResultsContainer.setVisibility(GONE);
         recyclerView = rootView.findViewById(R.id.ListViewRun);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -124,6 +131,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 
                             if (selectedPosition == 0) {
                                 text2.setText("");
+                                runResultsContainer.setVisibility(GONE);
                                 recyclerView.setAdapter(null);
                             } else {
                                 String str = getPresetDistance(
@@ -155,6 +163,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
 
                             if (selectedPosition == 0) {
                                 text2.setText("");
+                                runResultsContainer.setVisibility(GONE);
                                 recyclerView.setAdapter(null);
                             } else {
                                 String str = getPresetDistance(
@@ -330,6 +339,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3a.setText("");
             text3b.setText("");
             text3c.setText("");
+            runResultsContainer.setVisibility(GONE);
             recyclerView.setAdapter(null);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
@@ -340,18 +350,19 @@ public class FragRun extends Fragment implements View.OnClickListener {
 
 
     public void setSplits(double dist, double total) {
-        String measurement = "Mile";
+        String measurement = getString(R.string.mile_capitilised);
         if (isMetric)
-            measurement = "Kilometre";
+            measurement = getString(R.string.kilometre_capitilised);
         ArrayList<String> results = new ArrayList();
-        results.add(measurement + " splits (rounded to seconds)");
+        results.add(measurement + " " + getString(R.string.splits_text));
         double pace = (total / dist) / 60;
         for (int i = 0; i < (int) dist; i++) {
             results.add(measurement + " - " + (i + 1) + ":  "
                     + getGoodTimeValues(pace * (i + 1)));
         }
-        results.add("Last split - " + dist + ":  "
+        results.add(getString(R.string.last_split) + " - " + dist + ":  "
                 + getGoodTimeEndValues(total));
+        runResultsContainer.setVisibility(VISIBLE);
         ResultsRecycler rr = new ResultsRecycler(results);
         recyclerView.setAdapter(rr);
     }
