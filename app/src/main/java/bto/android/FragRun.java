@@ -1,5 +1,6 @@
 package bto.android;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 
 import java.util.ArrayList;
 
@@ -47,6 +51,9 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private ToggleButton toggle;
     private boolean isMetric;
     private LinearLayout runResultsContainer;
+    private MaterialButtonToggleGroup materialButtonToggleGroup;
+    private MaterialButton button1, button2;
+    private Activity activity;
 
     public FragRun() {
     }
@@ -55,6 +62,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_run, container, false);
+
+        activity = getActivity();
 
         text1a = (EditText) rootView.findViewById(R.id.EditText01a);
         text1b = (EditText) rootView.findViewById(R.id.EditText01b);
@@ -66,10 +75,16 @@ public class FragRun extends Fragment implements View.OnClickListener {
         text1a.setWidth(10);
         text1b.setWidth(10);
         text1c.setWidth(10);
+        // Toggle buttons to switch between fragments
+        materialButtonToggleGroup = rootView.findViewById(R.id.toggleSplitsButton);
+        button1 = rootView.findViewById(R.id.button1);
+        button2 = rootView.findViewById(R.id.button2);
+        // Set run selected by default on launch
+        button1 = Utils.returnStyledButton(activity, button1, true);
         runResultsContainer = rootView.findViewById(R.id.runResultsContainer);
         runResultsContainer.setVisibility(GONE);
         recyclerView = rootView.findViewById(R.id.ListViewRun);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -83,7 +98,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
         paceButton.setOnClickListener(this);
 
         spinner = (Spinner) rootView.findViewById(R.id.spinnerrun);
-        adapter = ArrayAdapter.createFromResource(getActivity(),
+        adapter = ArrayAdapter.createFromResource(activity,
                 R.array.metricRun, android.R.layout.simple_spinner_item);
         isMetric = true;
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -118,7 +133,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                 if (isChecked) {
                     // The toggle is enabled
                     text2.setHint("kms");
-                    adapter = ArrayAdapter.createFromResource(getActivity(),
+                    adapter = ArrayAdapter.createFromResource(activity,
                             R.array.metricRun,
                             android.R.layout.simple_spinner_item);
                     isMetric = true;
@@ -150,7 +165,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                 } else {
                     // The toggle is disabled
                     text2.setHint("miles");
-                    adapter = ArrayAdapter.createFromResource(getActivity(),
+                    adapter = ArrayAdapter.createFromResource(activity,
                             R.array.imperialRun,
                             android.R.layout.simple_spinner_item);
                     isMetric = false;
@@ -254,13 +269,34 @@ public class FragRun extends Fragment implements View.OnClickListener {
             }
         });
 
+        // Set up toggle button listener
+        materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
+            @Override
+            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
+                if (isChecked) {
+                    if (checkedId == button1.getId()) {
+                        recyclerView.setVisibility(View.VISIBLE);
+                        button1 = Utils.returnStyledButton(activity, button1, true);
+                        button2 = Utils.returnStyledButton(activity, button2, false);
+                        //mFirebaseAnalytics.logEvent("Splits_Clicked", new Bundle());
+                    }
+                    if (checkedId == button2.getId()) {
+                        recyclerView.setVisibility(View.GONE);
+                        button1 = Utils.returnStyledButton(activity, button1, false);
+                        button2 = Utils.returnStyledButton(activity, button2, true);
+                        //mFirebaseAnalytics.logEvent("Bike_Clicked", new Bundle());
+                    }
+                }
+            }
+        });
+
         return rootView;
     }
 
     @Override
     public void onClick(View v) {
         // This controls what you want to do when button is clicked
-        InputMethodManager imm = (InputMethodManager) getActivity()
+        InputMethodManager imm = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if (v.getId() == timeButton.getId()) {

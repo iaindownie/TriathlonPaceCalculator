@@ -72,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
         f3 = findViewById(R.id.fragment3);
 
         // Toggle buttons to switch between fragments
-        materialButtonToggleGroup =
-                findViewById(R.id.toggleButton);
+        materialButtonToggleGroup = findViewById(R.id.toggleButton);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
