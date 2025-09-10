@@ -12,6 +12,12 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
         <item name="android:listSelector">@color/base_color_info_default</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="MyActionBarDarkStyle" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="backgroundColor">@color/base_color_info_default</item>
     </style>
 
     <style name="PrimaryLabelStyle" parent="SecondaryLabelStyle">
