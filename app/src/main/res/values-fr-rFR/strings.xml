@@ -74,4 +74,9 @@
     <string name="splits_text">divisions (arrondis à la seconde)</string>
     <string name="last_split">Dernière scission</string>
     <string name="splits">Divisions</string>
+
+    <string name="predicted_race_performance">Performances de course prévues</string>
+    <string name="predicted_race_performance_text1">Bien que d\'autres équations de prédiction du temps de course existent, cette application utilise l\'équation publiée par Peter Riegel (1981).\n\n</string>
+    <string name="predicted_race_performance_text2">Il prend le temps et la distance que vous avez saisis dans l\'application et utilise un exposant (^1,06) pour représenter les changements de fatigue et de rythme qui se produisent sur des distances plus longues (ou plus courtes), ce qui le rend utile pour estimer vos performances sur une distance de course différente de celle que vous avez déjà terminée.\n\n</string>
+    <string name="based_on_riegels_formula">Basé sur la formule de Riegel</string>
 </resources>

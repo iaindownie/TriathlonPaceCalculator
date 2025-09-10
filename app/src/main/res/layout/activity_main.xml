@@ -87,16 +87,16 @@
         android:layout_below="@+id/toplineInfo"
         android:visibility="gone" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/coffeeFab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginEnd="@dimen/space_md"-->
-<!--        android:layout_marginBottom="@dimen/space_lg"-->
-<!--        android:clickable="true"-->
-<!--        app:backgroundTint="@color/base_color_interactive_on_secondary_disabled"-->
-<!--        app:srcCompat="@drawable/bmc_logo" />-->
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/coffeeFab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_marginEnd="@dimen/space_md"-->
+    <!--        android:layout_marginBottom="@dimen/space_lg"-->
+    <!--        android:clickable="true"-->
+    <!--        app:backgroundTint="@color/base_color_interactive_on_secondary_disabled"-->
+    <!--        app:srcCompat="@drawable/bmc_logo" />-->
 
 </RelativeLayout>

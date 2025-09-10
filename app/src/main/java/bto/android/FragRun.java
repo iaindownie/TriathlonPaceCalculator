@@ -2,8 +2,8 @@ package bto.android;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -57,6 +58,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
     private MaterialButtonToggleGroup materialButtonToggleGroup;
     private MaterialButton button1, button2;
     private Activity activity;
+    private ImageView predictionInfo;
 
     public FragRun() {
     }
@@ -86,14 +88,15 @@ public class FragRun extends Fragment implements View.OnClickListener {
         button1 = Utils.returnStyledButton(activity, button1, true);
         runResultsContainer = rootView.findViewById(R.id.runResultsContainer);
         runResultsContainer.setVisibility(GONE);
+        predictionsContainer = rootView.findViewById(R.id.predictionsRunContainer);
         recyclerView = rootView.findViewById(R.id.ListViewRun);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        predictionsRecyclerView = rootView.findViewById(R.id.ListViewRun);
+        predictionsRecyclerView = rootView.findViewById(R.id.PredictionsRun);
         RecyclerView.LayoutManager pLayoutManager = new LinearLayoutManager(activity);
-        predictionsRecyclerView.setLayoutManager(mLayoutManager);
+        predictionsRecyclerView.setLayoutManager(pLayoutManager);
         predictionsRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         clearButton = (Button) rootView.findViewById(R.id.ClearButton);
@@ -104,6 +107,8 @@ public class FragRun extends Fragment implements View.OnClickListener {
         distanceButton.setOnClickListener(this);
         paceButton = (Button) rootView.findViewById(R.id.Button03);
         paceButton.setOnClickListener(this);
+
+        predictionInfo = rootView.findViewById(R.id.predictionInfo);
 
         spinner = (Spinner) rootView.findViewById(R.id.spinnerrun);
         adapter = ArrayAdapter.createFromResource(activity,
@@ -286,17 +291,26 @@ public class FragRun extends Fragment implements View.OnClickListener {
                 if (isChecked) {
                     if (checkedId == button1.getId()) {
                         recyclerView.setVisibility(View.VISIBLE);
+                        predictionsContainer.setVisibility(GONE);
                         button1 = Utils.returnStyledButton(activity, button1, true);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         //mFirebaseAnalytics.logEvent("Splits_Clicked", new Bundle());
                     }
                     if (checkedId == button2.getId()) {
                         recyclerView.setVisibility(View.GONE);
+                        predictionsContainer.setVisibility(VISIBLE);
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, true);
                         //mFirebaseAnalytics.logEvent("Bike_Clicked", new Bundle());
                     }
                 }
+            }
+        });
+
+        predictionInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.doPredictionInfoDialog(activity);
             }
         });
 
@@ -311,16 +325,16 @@ public class FragRun extends Fragment implements View.OnClickListener {
 
         if (v.getId() == timeButton.getId()) {
             String t3a = text3a.getText().toString();
-            if (t3a == null || t3a.length() == 0)
+            if (t3a == null || t3a.isEmpty())
                 t3a = "0";
             String t3b = text3b.getText().toString();
-            if (t3b == null || t3b.length() == 0)
+            if (t3b == null || t3b.isEmpty())
                 t3b = "0";
             String t3c = text3c.getText().toString();
-            if (t3c == null || t3c.length() == 0)
+            if (t3c == null || t3c.isEmpty())
                 t3c = "0";
             String d2 = text2.getText().toString();
-            if (d2 == null || d2.length() == 0)
+            if (d2 == null || d2.isEmpty())
                 d2 = "0";
             String time = getTime(Double.valueOf(d2), Double.valueOf(t3a),
                     Double.valueOf(t3b), Double.valueOf(t3c));
@@ -332,22 +346,22 @@ public class FragRun extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == distanceButton.getId()) {
             String aaa = text1a.getText().toString();
-            if (aaa == null || aaa.length() == 0)
+            if (aaa == null || aaa.isEmpty())
                 aaa = "0";
             String bbb = text1b.getText().toString();
-            if (bbb == null || bbb.length() == 0)
+            if (bbb == null || bbb.isEmpty())
                 bbb = "0";
             String ccc = text1c.getText().toString();
-            if (ccc == null || ccc.length() == 0)
+            if (ccc == null || ccc.isEmpty())
                 ccc = "0";
             String ddd = text3a.getText().toString();
-            if (ddd == null || ddd.length() == 0)
+            if (ddd == null || ddd.isEmpty())
                 ddd = "0";
             String eee = text3b.getText().toString();
-            if (eee == null || eee.length() == 0)
+            if (eee == null || eee.isEmpty())
                 eee = "0";
             String fff = text3c.getText().toString();
-            if (fff == null || fff.length() == 0)
+            if (fff == null || fff.isEmpty())
                 fff = "0";
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(ddd),
@@ -357,16 +371,16 @@ public class FragRun extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == paceButton.getId()) {
             String t1a = text1a.getText().toString();
-            if (t1a == null || t1a.length() == 0)
+            if (t1a == null || t1a.isEmpty())
                 t1a = "0";
             String t1b = text1b.getText().toString();
-            if (t1b == null || t1b.length() == 0)
+            if (t1b == null || t1b.isEmpty())
                 t1b = "0";
             String t1c = text1c.getText().toString();
-            if (t1c == null || t1c.length() == 0)
+            if (t1c == null || t1c.isEmpty())
                 t1c = "0";
             String d3 = text2.getText().toString();
-            if (d3 == null || d3.length() == 0)
+            if (d3 == null || d3.isEmpty())
                 d3 = "0";
             String pace = getPace(Double.valueOf(d3), Double.valueOf(t1a),
                     Double.valueOf(t1b), Double.valueOf(t1c));
@@ -415,18 +429,30 @@ public class FragRun extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(rr);
 
         ArrayList<String> predictions = new ArrayList();
-        predictions.add(measurement + " " + getString(R.string.splits_text));
+        //predictions.add(measurement + " " + getString(R.string.splits_text));
+        int metricPresets = 5;
+        int imperialPresets = 7;
+        if (isMetric) {
+            TypedArray distances = getResources().obtainTypedArray(R.array.metricRun);
+            for (int i = 1; i <= metricPresets; i++) {
+                double ddd = new Double(new Double(getPresetDistance(i, true)) / dist);
+                double pow = Math.pow(ddd, 1.06);
+                //Log.d("INFO", distances.getString(i) + " - " + getPresetDistance(i, true) + " - " + ddd + " - " + getGoodTimeValues((total / 60) * pow));
+                predictions.add(distances.getString(i) + " - " + getGoodTimeValues((total / 60) * pow));
+            }
+        } else {
+            TypedArray distances = getResources().obtainTypedArray(R.array.imperialRun);
+            for (int i = 1; i <= imperialPresets; i++) {
+                double ddd = new Double(new Double(getPresetDistance(i, false)) / dist);
+                double pow = Math.pow(ddd, 1.06);
+                //Log.d("INFO", distances.getString(i) + " - " + getPresetDistance(i, false) + " - " + ddd + " - " + getGoodTimeValues((total / 60) * pow));
+                predictions.add(distances.getString(i) + " - " + getGoodTimeValues((total / 60) * pow));
+            }
+        }
 
-        Log.d("INFO", "" + dist);
-        Log.d("INFO", "" + (total/60));
-        Log.d("INFO", "" + 10.0 / dist);
-        int dd = new Double(10.0 / dist).intValue();
-        Log.d("INFO", "" + dd);
-        double pow = Math.pow(dd, 1.06);
-        Log.d("INFO", "" + pow);
-        Log.d("INFO", "" + ((total/60) * pow));
+        ResultsRecycler predictionsText = new ResultsRecycler(predictions);
+        predictionsRecyclerView.setAdapter(predictionsText);
 
-        //predictions.add();
 
     }
 

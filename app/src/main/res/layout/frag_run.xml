@@ -291,15 +291,35 @@
             android:paddingBottom="10dp" />
 
         <RelativeLayout
-            android:id="@+id/PredictionsRunContainer"
+            android:id="@+id/predictionsRunContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp">
 
+            <TextView
+                android:id="@+id/predictionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_sm"
+                android:layout_toStartOf="@+id/predictionInfo"
+                android:text="@string/based_on_riegels_formula"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/predictionInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/space_md"
+                android:src="@drawable/outline_info_24" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/PredictionsRun"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/predictionText"
+                android:layout_marginTop="@dimen/space_sm" />
 
         </RelativeLayout>
 

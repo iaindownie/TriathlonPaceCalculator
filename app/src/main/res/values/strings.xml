@@ -83,4 +83,10 @@
     <string name="splits_text">splits (rounded to seconds)</string>
     <string name="last_split">Last split</string>
     <string name="splits">Splits</string>
+
+    <string name="predicted_race_performance">Predicted Race Performance</string>
+    <string name="predicted_race_performance_text1">While other race time predictor equations exist, this app uses the equation published by Peter Riegel (1981).\n\n</string>
+    <string name="predicted_race_performance_text2">It takes the time and distance entered by you in the app, and uses an exponent (^1.06) to represent the changes in fatigue and pace that occur in longer (or shorter) distances, making it useful for estimating your performance in a different race distance than one you\'ve already completed.\n\n</string>
+    <string name="based_on_riegels_formula">Based on Riegel\'s formula</string>
+
 </resources>

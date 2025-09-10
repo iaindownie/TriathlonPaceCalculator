@@ -100,4 +100,21 @@ public class Utils {
         intent.setData(Uri.parse(url));
         activity.startActivity(intent);
     }
+
+    public static void doPredictionInfoDialog(Activity activity) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(activity.getResources().getString(R.string.predicted_race_performance_text1));
+        sb.append(activity.getResources().getString(R.string.predicted_race_performance_text2));
+
+        new MaterialAlertDialogBuilder(activity, R.style.AlertDialogTheme)
+                .setTitle(R.string.predicted_race_performance)
+                .setMessage(sb.toString())
+                .setPositiveButton(R.string.okay, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .show();
+    }
 }
