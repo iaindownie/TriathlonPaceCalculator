@@ -277,7 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Predictions"
+                android:text="@string/predictions"
                 app:shapeAppearanceOverlay="@style/roundedCorners_8rad"
                 app:strokeColor="@null" />
 
