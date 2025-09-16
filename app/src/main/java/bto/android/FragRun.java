@@ -323,6 +323,11 @@ public class FragRun extends Fragment implements View.OnClickListener {
         InputMethodManager imm = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
 
+        button1 = Utils.returnStyledButton(activity, button1, true);
+        button2 = Utils.returnStyledButton(activity, button2, false);
+        recyclerView.setVisibility(VISIBLE);
+        predictionsContainer.setVisibility(GONE);
+
         if (v.getId() == timeButton.getId()) {
             String t3a = text3a.getText().toString();
             if (t3a == null || t3a.isEmpty())
