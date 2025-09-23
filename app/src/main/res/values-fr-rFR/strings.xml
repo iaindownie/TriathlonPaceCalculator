@@ -36,7 +36,7 @@
 
     <string name="preset_imperial_run_marathon">Marathon (miles)</string>
     <string name="preset_imperial_run_20">20 milles</string>
-    <string name="preset_imperial_run_half_marathon">1/2 marathon (miles)</string>
+    <string name="preset_imperial_run_half_marathon">½ marathon (miles)</string>
     <string name="preset_imperial_run_10">10 milles</string>
     <string name="preset_imperial_run_6">6.2 milles (10km)</string>
     <string name="preset_imperial_run_5">5 milles</string>
@@ -44,19 +44,19 @@
 
     <string name="preset_metric_run_marathon">Marathon (km)</string>
     <string name="preset_metric_run_30">30 km</string>
-    <string name="preset_metric_run_half_marathon">1/2 marathon (km)</string>
+    <string name="preset_metric_run_half_marathon">½ marathon (km)</string>
     <string name="preset_metric_run_10">10 km</string>
     <string name="preset_metric_run_parkrun">5km</string>
 
     <string name="preset_imperial_bike_ironman">Ironman (112 milles)</string>
     <string name="preset_imperial_bike_century">Siècle (100 milles)</string>
-    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 milles)</string>
+    <string name="preset_imperial_bike_half_ironman">½ Ironman (56 milles)</string>
     <string name="preset_imperial_bike_olympic">Tri Olympique (24.85 milles)</string>
     <string name="preset_imperial_bike_sprint">Tri Sprint (12.43 milles)</string>
 
     <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
     <string name="preset_metric_bike_century">Siècle (160 km)</string>
-    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_half_ironman">½ Ironman (90 km)</string>
     <string name="preset_metric_bike_olympic">Tri Olympique (40 km)</string>
     <string name="preset_metric_bike_sprint">Tri Sprint (20 km)</string>
 
@@ -80,4 +80,10 @@
     <string name="predicted_race_performance_text2">Il prend le temps et la distance que vous avez saisis dans l\'application et utilise un exposant (^1,06) pour représenter les changements de fatigue et de rythme qui se produisent sur des distances plus longues (ou plus courtes), ce qui le rend utile pour estimer vos performances sur une distance de course différente de celle que vous avez déjà terminée.\n\n</string>
     <string name="based_on_riegels_formula">Basé sur la formule de Riegel</string>
     <string name="predictions">Prédictions</string>
+    <string name="conversion_summary">Résumé des conversions</string>
+
+    <string name="pace">Rythme</string>
+    <string name="speed">Vitesse</string>
+    <string name="kmsAt">kilomètres à</string>
+    <string name="milesAt">miles à</string>
 </resources>

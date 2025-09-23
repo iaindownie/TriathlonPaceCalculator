@@ -243,10 +243,10 @@ public class FragBike extends Fragment implements View.OnClickListener {
 
         if (v.getId() == timeButton.getId()) {
             String t3a = text3a.getText().toString();
-            if (t3a == null || t3a.length() == 0)
+            if (t3a == null || t3a.isEmpty())
                 t3a = "0";
             String d2 = text2.getText().toString();
-            if (d2 == null || d2.length() == 0)
+            if (d2 == null || d2.isEmpty())
                 d2 = "0";
             String time = getTime(Double.valueOf(d2), Double.valueOf(t3a));
             text1a.setText(time.substring(0, time.indexOf(":")));
@@ -257,16 +257,16 @@ public class FragBike extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == distanceButton.getId()) {
             String aaa = text1a.getText().toString();
-            if (aaa == null || aaa.length() == 0)
+            if (aaa == null || aaa.isEmpty())
                 aaa = "0";
             String bbb = text1b.getText().toString();
-            if (bbb == null || bbb.length() == 0)
+            if (bbb == null || bbb.isEmpty())
                 bbb = "0";
             String ccc = text1c.getText().toString();
-            if (ccc == null || ccc.length() == 0)
+            if (ccc == null || ccc.isEmpty())
                 ccc = "0";
             String ddd = text3a.getText().toString();
-            if (ddd == null || ddd.length() == 0)
+            if (ddd == null || ddd.isEmpty())
                 ddd = "0";
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(ddd));
@@ -275,24 +275,24 @@ public class FragBike extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == paceButton.getId()) {
             String t1a = text1a.getText().toString();
-            if (t1a == null || t1a.length() == 0)
+            if (t1a == null || t1a.isEmpty())
                 t1a = "0";
             String t1b = text1b.getText().toString();
-            if (t1b == null || t1b.length() == 0)
+            if (t1b == null || t1b.isEmpty())
                 t1b = "0";
             String t1c = text1c.getText().toString();
-            if (t1c == null || t1c.length() == 0)
+            if (t1c == null || t1c.isEmpty())
                 t1c = "0";
             String d3 = text2.getText().toString();
-            if (d3 == null || d3.length() == 0)
+            if (d3 == null || d3.isEmpty())
                 d3 = "0";
             String speed = getSpeed(Double.valueOf(d3), Double.valueOf(t1a),
                     Double.valueOf(t1b), Double.valueOf(t1c));
             text3a.setText(speed);
             if (isMetric) {
-                filler3speed.setText("kph");
+                filler3speed.setText(getActivity().getResources().getString(R.string.kph));
             } else {
-                filler3speed.setText("mph");
+                filler3speed.setText(getActivity().getResources().getString(R.string.mph));
             }
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
@@ -317,27 +317,27 @@ public class FragBike extends Fragment implements View.OnClickListener {
 
     public void setSplits(double speed, double dist) {
         ArrayList<String> results = new ArrayList<String>();
-        results.add("Conversion summary");
+        results.add(getString(R.string.conversion_summary));
         if (isMetric) {
             results.add(Constants.twoDecPoints.format(Constants.round(dist, 2))
-                    + " kilometers at " + Constants.twoDecPoints.format(speed)
-                    + " kph");
+                    + " " + getString(R.string.kmsAt) + " " +
+                    Constants.twoDecPoints.format(speed)
+                    + " " + getString(R.string.kph));
             results.add(Constants.twoDecPoints.format(Constants.round(
                     (dist / Constants.toKmConversion), 2))
-                    + " miles at "
-                    + Constants.twoDecPoints
-                    .format((speed / Constants.toKmConversion))
-                    + " mph");
+                    + " " + getString(R.string.milesAt) + " " +
+                    Constants.twoDecPoints.format((speed / Constants.toKmConversion))
+                    + " " + getString(R.string.mph));
         } else {
             results.add(Constants.twoDecPoints.format(Constants.round(dist, 2))
-                    + " miles at " + Constants.twoDecPoints.format(speed)
-                    + " mph");
+                    + " " + getString(R.string.milesAt) + " " +
+                    Constants.twoDecPoints.format(speed)
+                    + " " + getString(R.string.mph));
             results.add(Constants.twoDecPoints.format(Constants.round(
                     (dist * Constants.toKmConversion), 2))
-                    + " kilometers at "
-                    + Constants.twoDecPoints
-                    .format((speed * Constants.toKmConversion))
-                    + " kph");
+                    + " " + getString(R.string.kmsAt) + " " +
+                    Constants.twoDecPoints.format((speed * Constants.toKmConversion))
+                    + " " + getString(R.string.kph));
         }
         ResultsRecycler rr = new ResultsRecycler(results);
         recyclerView.setAdapter(rr);

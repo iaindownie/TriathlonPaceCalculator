@@ -36,7 +36,7 @@
 
     <string name="preset_imperial_run_marathon">Maratón (millas)</string>
     <string name="preset_imperial_run_20">20 millas</string>
-    <string name="preset_imperial_run_half_marathon">1/2 maratón (millas)</string>
+    <string name="preset_imperial_run_half_marathon">½ maratón (millas)</string>
     <string name="preset_imperial_run_10">10 millas</string>
     <string name="preset_imperial_run_6">6.2 millas (10km)</string>
     <string name="preset_imperial_run_5">5 millas</string>
@@ -44,19 +44,19 @@
 
     <string name="preset_metric_run_marathon">Maratón (km)</string>
     <string name="preset_metric_run_30">30 km</string>
-    <string name="preset_metric_run_half_marathon">1/2 maratón (km)</string>
+    <string name="preset_metric_run_half_marathon">½ maratón (km)</string>
     <string name="preset_metric_run_10">10 km</string>
     <string name="preset_metric_run_parkrun">5km</string>
 
     <string name="preset_imperial_bike_ironman">Ironman (112 millas)</string>
     <string name="preset_imperial_bike_century">Siglo (100 millas)</string>
-    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 millas)</string>
+    <string name="preset_imperial_bike_half_ironman">½ Ironman (56 millas)</string>
     <string name="preset_imperial_bike_olympic">Tri Olympique (24.85 millas)</string>
     <string name="preset_imperial_bike_sprint">Tri Sprint (12.43 millas)</string>
 
     <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
     <string name="preset_metric_bike_century">Siglo (160 km)</string>
-    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_half_ironman">½ Ironman (90 km)</string>
     <string name="preset_metric_bike_olympic">Tri Olímpico (40 km)</string>
     <string name="preset_metric_bike_sprint">Tri Sprint (20 km)</string>
 
@@ -80,4 +80,10 @@
     <string name="predicted_race_performance_text2">Toma el tiempo y la distancia ingresados por usted en la aplicación, y utiliza un exponente (^1.06) para representar los cambios en la fatiga y el ritmo que ocurren en distancias más largas (o más cortas), lo que lo hace útil para estimar su rendimiento en una distancia de carrera diferente a la que ya ha completado.\n\n</string>
     <string name="based_on_riegels_formula">Basado en la fórmula de Riegel</string>
     <string name="predictions">Predicciones</string>
+    <string name="conversion_summary">Resumen de conversión</string>
+
+    <string name="pace">Paso</string>
+    <string name="speed">Velocidad</string>
+    <string name="kmsAt">kilómetros en</string>
+    <string name="milesAt">millas en</string>
 </resources>

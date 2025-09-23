@@ -75,7 +75,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
         paceButton = (Button) rootView.findViewById(R.id.Button03);
         paceButton.setOnClickListener(this);
         filler3swim = (TextView) rootView.findViewById(R.id.filler3swim);
-        filler3swim.setText(R.string.per100m);
+        filler3swim.setText(getString(R.string.per100m));
 
         spinner = (Spinner) rootView.findViewById(R.id.spinnerswim);
         adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -250,13 +250,13 @@ public class FragSwim extends Fragment implements View.OnClickListener {
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
         if (v.getId() == timeButton.getId()) {
             String t3b = text3b.getText().toString();
-            if (t3b == null || t3b.length() == 0)
+            if (t3b == null || t3b.isEmpty())
                 t3b = "0";
             String t3c = text3c.getText().toString();
-            if (t3c == null || t3c.length() == 0)
+            if (t3c == null || t3c.isEmpty())
                 t3c = "0";
             String d2 = text2.getText().toString();
-            if (d2 == null || d2.length() == 0)
+            if (d2 == null || d2.isEmpty())
                 d2 = "0";
             String time = getTime(Double.valueOf(d2), Double.valueOf(t3b),
                     Double.valueOf(t3c));
@@ -268,19 +268,19 @@ public class FragSwim extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == distanceButton.getId()) {
             String aaa = text1a.getText().toString();
-            if (aaa == null || aaa.length() == 0)
+            if (aaa == null || aaa.isEmpty())
                 aaa = "0";
             String bbb = text1b.getText().toString();
-            if (bbb == null || bbb.length() == 0)
+            if (bbb == null || bbb.isEmpty())
                 bbb = "0";
             String ccc = text1c.getText().toString();
-            if (ccc == null || ccc.length() == 0)
+            if (ccc == null || ccc.isEmpty())
                 ccc = "0";
             String eee = text3b.getText().toString();
-            if (eee == null || eee.length() == 0)
+            if (eee == null || eee.isEmpty())
                 eee = "0";
             String fff = text3c.getText().toString();
-            if (fff == null || fff.length() == 0)
+            if (fff == null || fff.isEmpty())
                 fff = "0";
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(eee),
@@ -290,25 +290,25 @@ public class FragSwim extends Fragment implements View.OnClickListener {
         }
         if (v.getId() == paceButton.getId()) {
             String t1a = text1a.getText().toString();
-            if (t1a == null || t1a.length() == 0)
+            if (t1a == null || t1a.isEmpty())
                 t1a = "0";
             String t1b = text1b.getText().toString();
-            if (t1b == null || t1b.length() == 0)
+            if (t1b == null || t1b.isEmpty())
                 t1b = "0";
             String t1c = text1c.getText().toString();
-            if (t1c == null || t1c.length() == 0)
+            if (t1c == null || t1c.isEmpty())
                 t1c = "0";
             String d3 = text2.getText().toString();
-            if (d3 == null || d3.length() == 0)
+            if (d3 == null || d3.isEmpty())
                 d3 = "0";
             String pace = getPace(Double.valueOf(d3), Double.valueOf(t1a),
                     Double.valueOf(t1b), Double.valueOf(t1c));
             text3b.setText(pace.substring(0, pace.indexOf(":")));
             text3c.setText(pace.substring(pace.indexOf(":") + 1));
             if (isMetric) {
-                filler3swim.setText("/100m");
+                filler3swim.setText(getString(R.string.per100m));
             } else {
-                filler3swim.setText("/100yd");
+                filler3swim.setText(getString(R.string.per100yds));
             }
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
@@ -331,14 +331,14 @@ public class FragSwim extends Fragment implements View.OnClickListener {
 
     public void setSplits(double dist, double total) {
         ArrayList<String> results = new ArrayList<String>();
-        results.add("Conversion summary");
+        results.add(getString(R.string.conversion_summary));
         double pace = (total / (dist / 100)) / 60;
         if (isMetric) {
-            results.add("Pace: " + getGoodTimeValues(pace) + " /100m");
-            results.add("Speed: " + getSpeed(dist, total, isMetric) + " kmh");
+            results.add(getString(R.string.pace) + ": " + getGoodTimeValues(pace) + " " + getString(R.string.per100m));
+            results.add(getString(R.string.speed) + ": " + getSpeed(dist, total, isMetric) + " " + getString(R.string.kph));
         } else {
-            results.add("Pace: " + getGoodTimeValues(pace) + " /100yd");
-            results.add("Speed: " + getSpeed(dist, total, isMetric) + " mph");
+            results.add(getString(R.string.pace) + ": " + getGoodTimeValues(pace) + " " + getString(R.string.per100yds));
+            results.add(getString(R.string.speed) + ": " + getSpeed(dist, total, isMetric) + " " + getString(R.string.mph));
         }
         ResultsRecycler rr = new ResultsRecycler(results);
         recyclerView.setAdapter(rr);

@@ -323,6 +323,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
         InputMethodManager imm = (InputMethodManager) activity
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
 
+        // These reset the splits/predictions views if time/distance/pace data tweaked
         button1 = Utils.returnStyledButton(activity, button1, true);
         button2 = Utils.returnStyledButton(activity, button2, false);
         recyclerView.setVisibility(VISIBLE);

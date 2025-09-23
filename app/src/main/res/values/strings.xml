@@ -46,7 +46,7 @@
 
     <string name="preset_imperial_run_marathon">Marathon (miles)</string>
     <string name="preset_imperial_run_20">20 miles</string>
-    <string name="preset_imperial_run_half_marathon">1/2 marathon (miles)</string>
+    <string name="preset_imperial_run_half_marathon">½ marathon (miles)</string>
     <string name="preset_imperial_run_10">10 miles</string>
     <string name="preset_imperial_run_6">6.2 miles (10km)</string>
     <string name="preset_imperial_run_5">5 miles</string>
@@ -54,19 +54,19 @@
 
     <string name="preset_metric_run_marathon">Marathon (kms)</string>
     <string name="preset_metric_run_30">30 km</string>
-    <string name="preset_metric_run_half_marathon">1/2 marathon (kms)</string>
+    <string name="preset_metric_run_half_marathon">½ marathon (kms)</string>
     <string name="preset_metric_run_10">10 kms</string>
     <string name="preset_metric_run_parkrun">5 km</string>
 
     <string name="preset_imperial_bike_ironman">Ironman (112 miles)</string>
     <string name="preset_imperial_bike_century">Century (100 miles)</string>
-    <string name="preset_imperial_bike_half_ironman">1/2 Ironman (56 miles)</string>
+    <string name="preset_imperial_bike_half_ironman">½ Ironman (56 miles)</string>
     <string name="preset_imperial_bike_olympic">Olympic Tri (24.85 miles)</string>
     <string name="preset_imperial_bike_sprint">Sprint Tri (12.43 miles)</string>
 
     <string name="preset_metric_bike_ironman">Ironman (180 km)</string>
     <string name="preset_metric_bike_century">Century (160 km)</string>
-    <string name="preset_metric_bike_half_ironman">1/2 Ironman (90 km)</string>
+    <string name="preset_metric_bike_half_ironman">½ Ironman (90 km)</string>
     <string name="preset_metric_bike_olympic">Olympic Tri (40 km)</string>
     <string name="preset_metric_bike_sprint">Sprint Tri (20 km)</string>
 
@@ -76,7 +76,7 @@
     <string name="tutorial_blue_bubble">Select an activity, then add a time and distance to get pace/speed</string>
     <string name="buy_me_a_coffee">Buy me a coffee</string>
     <string name="coffee_text1">If you find Triathlon Pace Calculator useful, why not buy me a coffee (click on button below)?</string>
-    <string name="coffee_text2">I\'m committed to keep the app free to download and advert free, and a coffee or three will keep me refreshed while I maintain and improve to app.</string>
+    <string name="coffee_text2">I\'m committed to keeping the app free to download and advert free, and a coffee or three will keep me refreshed while I maintain and improve to app.</string>
 
     <string name="mile_capitilised">Mile</string>
     <string name="kilometre_capitilised">Kilometre</string>
@@ -89,5 +89,11 @@
     <string name="predicted_race_performance_text2">It takes the time and distance entered by you in the app, and uses an exponent (^1.06) to represent the changes in fatigue and pace that occur in longer (or shorter) distances, making it useful for estimating your performance in a different race distance than one you\'ve already completed.\n\n</string>
     <string name="based_on_riegels_formula">Based on Riegel\'s formula</string>
     <string name="predictions">Predictions</string>
+    <string name="conversion_summary">Conversion summary</string>
+
+    <string name="pace">Pace</string>
+    <string name="speed">Speed</string>
+    <string name="kmsAt">kilometres at</string>
+    <string name="milesAt">miles at</string>
 
 </resources>
