@@ -2,7 +2,7 @@
 <resources>
     <string name="title_section1">Courir</string>
     <string name="title_section2">Vélo</string>
-    <string name="title_section3">Nager</string>
+    <string name="title_section3">Nager +</string>
     <string name="about">À propos</string>
     <string name="instructions">Aide</string>
     <string name="hourName">Heure</string>
@@ -86,4 +86,5 @@
     <string name="speed">Vitesse</string>
     <string name="kmsAt">kilomètres à</string>
     <string name="milesAt">miles à</string>
+    <string name="css_calculator">Calculateur CSS</string>
 </resources>

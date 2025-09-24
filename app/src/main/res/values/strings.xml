@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">Pace Calculator</string>
     <string name="title_section1">Run</string>
     <string name="title_section2">Bike</string>
-    <string name="title_section3">Swim</string>
+    <string name="title_section3">Swim +</string>
     <string name="title_section4" translatable="false">Mi&#60;&#62;Km</string>
     <string name="about">About</string>
     <string name="instructions">Help</string>
@@ -95,5 +95,6 @@
     <string name="speed">Speed</string>
     <string name="kmsAt">kilometres at</string>
     <string name="milesAt">miles at</string>
+    <string name="css_calculator">CSS calculator</string>
 
 </resources>

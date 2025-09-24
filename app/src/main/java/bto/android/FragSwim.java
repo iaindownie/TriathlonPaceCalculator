@@ -10,12 +10,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 
@@ -36,10 +37,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
     private Spinner spinner;
     private ArrayAdapter<CharSequence> adapter;
     private RecyclerView recyclerView;
-    private Button clearButton;
-    private Button timeButton;
-    private Button distanceButton;
-    private Button paceButton;
+    private MaterialButton clearButton, timeButton, distanceButton, paceButton, cssButton;
     private TextView filler3swim;
     private ToggleButton toggle;
     private boolean isMetric;
@@ -52,12 +50,12 @@ public class FragSwim extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_swim, container, false);
 
-        text1a = (EditText) rootView.findViewById(R.id.EditText01a);
-        text1b = (EditText) rootView.findViewById(R.id.EditText01b);
-        text1c = (EditText) rootView.findViewById(R.id.EditText01c);
-        text2 = (EditText) rootView.findViewById(R.id.EditText02);
-        text3b = (EditText) rootView.findViewById(R.id.EditText03b);
-        text3c = (EditText) rootView.findViewById(R.id.EditText03c);
+        text1a = rootView.findViewById(R.id.EditText01a);
+        text1b = rootView.findViewById(R.id.EditText01b);
+        text1c = rootView.findViewById(R.id.EditText01c);
+        text2 = rootView.findViewById(R.id.EditText02);
+        text3b = rootView.findViewById(R.id.EditText03b);
+        text3c = rootView.findViewById(R.id.EditText03c);
         text1a.setWidth(10);
         text1b.setWidth(10);
         text1c.setWidth(10);
@@ -66,18 +64,25 @@ public class FragSwim extends Fragment implements View.OnClickListener {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        clearButton = (Button) rootView.findViewById(R.id.ClearButton);
+        clearButton = rootView.findViewById(R.id.ClearButton);
         clearButton.setOnClickListener(this);
-        timeButton = (Button) rootView.findViewById(R.id.Button01);
+        timeButton = rootView.findViewById(R.id.Button01);
         timeButton.setOnClickListener(this);
-        distanceButton = (Button) rootView.findViewById(R.id.Button02);
+        distanceButton = rootView.findViewById(R.id.Button02);
         distanceButton.setOnClickListener(this);
-        paceButton = (Button) rootView.findViewById(R.id.Button03);
+        paceButton = rootView.findViewById(R.id.Button03);
         paceButton.setOnClickListener(this);
-        filler3swim = (TextView) rootView.findViewById(R.id.filler3swim);
+        cssButton = rootView.findViewById(R.id.cssButton);
+        cssButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCSSfragment();
+            }
+        });
+        filler3swim = rootView.findViewById(R.id.filler3swim);
         filler3swim.setText(getString(R.string.per100m));
 
-        spinner = (Spinner) rootView.findViewById(R.id.spinnerswim);
+        spinner = rootView.findViewById(R.id.spinnerswim);
         adapter = ArrayAdapter.createFromResource(getActivity(),
                 R.array.metricSwim, android.R.layout.simple_spinner_item);
         isMetric = true;
@@ -105,7 +110,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             }
         });
 
-        toggle = (ToggleButton) rootView.findViewById(R.id.togglebuttonSwim);
+        toggle = rootView.findViewById(R.id.togglebuttonSwim);
         toggle.setChecked(true);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView,
@@ -470,6 +475,11 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             else
                 return "";
         }
+    }
+
+    public void showCSSfragment() {
+        CSSDialogFragment cssDialogFragment = new CSSDialogFragment();
+        cssDialogFragment.show(getChildFragmentManager(), CSSDialogFragment.TAG);
     }
 
 }
