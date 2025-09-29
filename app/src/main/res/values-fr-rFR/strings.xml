@@ -87,4 +87,11 @@
     <string name="kmsAt">kilomètres à</string>
     <string name="milesAt">miles à</string>
     <string name="css_calculator">Calculateur CSS</string>
+    <string name="secs_per_100m_or_yds">secondes par 100 m ou yds</string>
+    <string name="yourCss">Votre CSS: %s  </string>
+    <string name="cssText1">La vitesse critique de nage (CSS) est un rythme maximal théorique qu\'un nageur peut maintenir sur une longue distance, souvent 1 500 mètres ou plus.</string>
+    <string name="cssText2">Nagez 400 m contre la montre, aussi vite que possible. Reposez-vous deux à cinq minutes. Nagez 200 m contre la montre, aussi vite que possible. Additionnez les temps ci-dessous pour obtenir votre allure CSS en secondes par 100 m (ou yards).</string>
+    <string name="cssInstructions1">1. Entrez votre temps pour 400 (mètres ou yards)</string>
+    <string name="cssInstructions2">2. Entrez votre temps pour 200 (mètres ou yards)</string>
+    <string name="critical_swim_speed">Vitesse de nage critique</string>
 </resources>

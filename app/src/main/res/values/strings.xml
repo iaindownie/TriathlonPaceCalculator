@@ -96,5 +96,12 @@
     <string name="kmsAt">kilometres at</string>
     <string name="milesAt">miles at</string>
     <string name="css_calculator">CSS calculator</string>
+    <string name="secs_per_100m_or_yds">secs per 100m or yds</string>
+    <string name="yourCss">Your CSS: %s  </string>
+    <string name="cssText1">The Critical Swim Speed (CSS) is a theoretical maximum pace a swimmer can sustain for a long distance, often 1500 meters or more.</string>
+    <string name="cssText2">Swim a 400m time trial, as fast as you can. Rest for about two to five minutes. Swim a 200m time trial as fast as you can. Add the times below to get your CSS pace in seconds per 100m (or yards).</string>
+    <string name="cssInstructions1">1. Enter your time for 400 (meters or yards)</string>
+    <string name="cssInstructions2">2. Enter your time for 200 (meters or yards)</string>
+    <string name="critical_swim_speed">Critical swim speed</string>
 
 </resources>

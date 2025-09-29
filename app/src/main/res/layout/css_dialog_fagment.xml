@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Critical swim speed"
+            android:text="@string/critical_swim_speed"
             android:textColor="@color/textColor"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -40,10 +40,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_md"
         android:layout_marginStart="@dimen/space_md"
+        android:layout_marginTop="@dimen/space_md"
         android:layout_marginEnd="@dimen/space_md"
-        android:text="The Critical Swim Speed (CSS) is a theoretical maximum pace a swimmer can sustain for a long distance, often 1500 meters or more."
+        android:text="@string/cssText1"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="@color/textColor" />
 
@@ -51,8 +51,143 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_md"
-        android:text="Swim a 400m time trial, as fast as you can. Rest for about two to five minutes. Swim a 200m time trial as fast as you can. Add the times below to get your CSS pace in seconds per 100m (or yards)."
+        android:text="@string/cssText2"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="@color/textColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:text="@string/cssInstructions1"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/textColor"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_md"
+        android:layout_marginEnd="@dimen/space_md"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/css400Minutes"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/mm"
+                android:inputType="number"
+                android:maxLength="2"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/css400Seconds"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/ss"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:text="@string/cssInstructions2"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/textColor"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_md"
+        android:layout_marginEnd="@dimen/space_md"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/css200Minutes"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/mm"
+                android:inputType="number"
+                android:maxLength="2"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/css200Seconds"
+                style="@style/MyOutlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor"
+                android:hint="@string/ss"
+                android:inputType="numberDecimal"
+                android:maxLength="6"
+                app:hintTextColor="@color/backgroundColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cssButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:text="Calculate my CSS"
+        android:textAllCaps="false"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/cssResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_md"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/textColor"
+        android:textStyle="bold" />
 
 </LinearLayout>
