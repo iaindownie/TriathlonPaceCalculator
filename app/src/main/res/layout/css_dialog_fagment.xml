@@ -6,6 +6,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -37,157 +38,177 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_md"
-        android:layout_marginTop="@dimen/space_md"
-        android:layout_marginEnd="@dimen/space_md"
-        android:text="@string/cssText1"
-        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-        android:textColor="@color/textColor" />
+        android:fillViewport="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_md"
-        android:text="@string/cssText2"
-        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-        android:textColor="@color/textColor" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_md"
-        android:text="@string/cssInstructions1"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:textColor="@color/textColor"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_md"
-        android:layout_marginEnd="@dimen/space_md"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_sm"
-            android:layout_weight="1"
-            app:hintAnimationEnabled="false"
-            app:hintEnabled="false">
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/css400Minutes"
-                style="@style/MyOutlinedTextField"
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/backgroundColor"
-                android:hint="@string/mm"
-                android:inputType="number"
-                android:maxLength="2"
-                app:hintTextColor="@color/backgroundColor" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="@dimen/space_md"
+                android:layout_marginTop="@dimen/space_md"
+                android:layout_marginEnd="@dimen/space_md"
+                android:text="@string/cssText1"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/textColor" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_sm"
-            android:layout_weight="1"
-            app:hintAnimationEnabled="false"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/css400Seconds"
-                style="@style/MyOutlinedTextField"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/backgroundColor"
-                android:hint="@string/ss"
-                android:inputType="numberDecimal"
-                android:maxLength="6"
-                app:hintTextColor="@color/backgroundColor" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/space_md"
+                android:text="@string/cssText2"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/textColor" />
 
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_md"
-        android:text="@string/cssInstructions2"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:textColor="@color/textColor"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_md"
-        android:layout_marginEnd="@dimen/space_md"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_sm"
-            android:layout_weight="1"
-            app:hintAnimationEnabled="false"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/css200Minutes"
-                style="@style/MyOutlinedTextField"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/backgroundColor"
-                android:hint="@string/mm"
-                android:inputType="number"
-                android:maxLength="2"
-                app:hintTextColor="@color/backgroundColor" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="@dimen/space_md"
+                android:text="@string/cssInstructions1"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_sm"
-            android:layout_weight="1"
-            app:hintAnimationEnabled="false"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/css200Seconds"
-                style="@style/MyOutlinedTextField"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/backgroundColor"
-                android:hint="@string/ss"
-                android:inputType="numberDecimal"
-                android:maxLength="6"
-                app:hintTextColor="@color/backgroundColor" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginStart="@dimen/space_md"
+                android:layout_marginEnd="@dimen/space_md"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_sm"
+                    android:layout_weight="1"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/cssButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_md"
-        android:text="Calculate my CSS"
-        android:textAllCaps="false"
-        android:textSize="14sp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/css400Minutes"
+                        style="@style/MyOutlinedTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:hint="@string/mm"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:hintTextColor="@color/backgroundColor" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/cssResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_md"
-        android:text=""
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:textColor="@color/textColor"
-        android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_sm"
+                    android:layout_weight="1"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/css400Seconds"
+                        style="@style/MyOutlinedTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:hint="@string/ss"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        app:hintTextColor="@color/backgroundColor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_md"
+                android:text="@string/cssInstructions2"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_md"
+                android:layout_marginEnd="@dimen/space_md"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_sm"
+                    android:layout_weight="1"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/css200Minutes"
+                        style="@style/MyOutlinedTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:hint="@string/mm"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        app:hintTextColor="@color/backgroundColor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/space_sm"
+                    android:layout_weight="1"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/css200Seconds"
+                        style="@style/MyOutlinedTextField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/backgroundColor"
+                        android:hint="@string/ss"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        app:hintTextColor="@color/backgroundColor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cssButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_md"
+                android:text="Calculate my CSS"
+                android:textAllCaps="false"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/cssResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_md"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

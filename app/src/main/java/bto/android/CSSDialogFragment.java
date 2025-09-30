@@ -1,9 +1,11 @@
 package bto.android;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -83,6 +85,9 @@ public class CSSDialogFragment extends DialogFragment {
                 double tempB = tempA / 2;
 
                 cssResult.setText(String.format(getString(R.string.yourCss), returnFormattedCSS(tempB)));
+                InputMethodManager imm = (InputMethodManager) getActivity()
+                        .getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(cssResult.getWindowToken(), 0);
             }
         });
 
