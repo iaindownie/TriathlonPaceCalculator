@@ -94,4 +94,5 @@
     <string name="cssInstructions1">1. Entrez votre temps pour 400 (mètres ou yards)</string>
     <string name="cssInstructions2">2. Entrez votre temps pour 200 (mètres ou yards)</string>
     <string name="critical_swim_speed">Vitesse de nage critique</string>
+    <string name="calculate_my_css">Calculer mon CSS</string>
 </resources>
