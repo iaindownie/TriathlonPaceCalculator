@@ -243,10 +243,10 @@ public class FragBike extends Fragment implements View.OnClickListener {
 
         if (v.getId() == timeButton.getId()) {
             String t3a = text3a.getText().toString();
-            if (t3a == null || t3a.isEmpty())
+            if (t3a == null || t3a.isEmpty() || t3a.equals("Infinit"))
                 t3a = "0";
             String d2 = text2.getText().toString();
-            if (d2 == null || d2.isEmpty())
+            if (d2 == null || d2.isEmpty() || d2.equals("Infinit"))
                 d2 = "0";
             String time = getTime(Double.valueOf(d2), Double.valueOf(t3a));
             text1a.setText(time.substring(0, time.indexOf(":")));
@@ -266,7 +266,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             if (ccc == null || ccc.isEmpty())
                 ccc = "0";
             String ddd = text3a.getText().toString();
-            if (ddd == null || ddd.isEmpty())
+            if (ddd == null || ddd.isEmpty() || ddd.equals("Infinit"))
                 ddd = "0";
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(ddd));
@@ -284,7 +284,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             if (t1c == null || t1c.isEmpty())
                 t1c = "0";
             String d3 = text2.getText().toString();
-            if (d3 == null || d3.isEmpty())
+            if (d3 == null || d3.isEmpty() || d3.equals("Infinit"))
                 d3 = "0";
             String speed = getSpeed(Double.valueOf(d3), Double.valueOf(t1a),
                     Double.valueOf(t1b), Double.valueOf(t1c));
