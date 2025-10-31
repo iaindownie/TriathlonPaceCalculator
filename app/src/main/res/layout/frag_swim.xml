@@ -22,8 +22,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
@@ -44,8 +45,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
@@ -64,8 +66,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
@@ -77,18 +80,19 @@
                     android:background="@color/backgroundColor"
                     android:hint="@string/ss"
                     android:inputType="numberDecimal"
-                    android:maxLength="6"
+                    android:maxLength="5"
                     app:hintTextColor="@color/backgroundColor" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Button01"
+                style="@style/PaceCalActionButtons"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="@string/calcTimeButton"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:textAllCaps="false" />
         </LinearLayout>
 
 
@@ -103,6 +107,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
                 android:layout_weight="0.25"
                 app:hintAnimationEnabled="false"
@@ -126,17 +131,19 @@
                 android:id="@+id/spinnerswim"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.4"
                 android:prompt="@string/preset_distance" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Button02"
+                style="@style/PaceCalActionButtons"
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="0.25"
                 android:text="@string/calcDistButton"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,8 +157,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
@@ -170,8 +178,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/space_sm"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false">
 
@@ -183,7 +192,7 @@
                     android:background="@color/backgroundColor"
                     android:hint="@string/ss"
                     android:inputType="numberDecimal"
-                    android:maxLength="6"
+                    android:maxLength="5"
                     app:hintTextColor="@color/backgroundColor" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -193,18 +202,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="1"
+                android:layout_weight="0.8"
                 android:text="@string/per100m"
                 android:textColor="@color/base_color_info_default" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Button03"
+                style="@style/PaceCalActionButtons"
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="@string/calcPaceButton"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <com.google.android.material.divider.MaterialDivider
@@ -258,11 +268,11 @@
         android:id="@+id/cssButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/css_calculator"
-        android:layout_marginEnd="@dimen/space_md"
-        android:layout_marginBottom="@dimen/space_lg_75"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/space_md"
+        android:layout_marginBottom="@dimen/space_lg_75"
+        android:text="@string/css_calculator"
         android:textAllCaps="false"
         android:textSize="14sp" />
 
