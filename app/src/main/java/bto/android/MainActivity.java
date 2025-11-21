@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private FragBike fragBike;
     private FragSwim fragSwim;
     private TextView topLine;
+    private RelativeLayout rootActivity;
 
 //    private FloatingActionButton coffeeFab;
 
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         setContentView(R.layout.activity_main);
+
+        rootActivity = findViewById(R.id.rootActivity);
+        EdgeToEdgeUtil.insetEdges(rootActivity, true, true);
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -119,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("TUTORIAL_BLUE_BUBBLE", true);
             editor.apply();
         }
+
 
 
         // Set up toggle button listener

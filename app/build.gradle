@@ -14,8 +14,8 @@ android {
         applicationId "bto.android"
         minSdk 30
         targetSdk 35
-        versionCode 23
-        versionName "3.7"
+        versionCode 24
+        versionName "3.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:34.4.0')
+    implementation platform('com.google.firebase:firebase-bom:34.6.0')
     // Add the dependencies for the Crashlytics NDK and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-crashlytics-ndk")
@@ -50,5 +50,6 @@ dependencies {
 
     // Blue bubble tooltips. Needs android.enableJetifier=true added to gradle.properties
     implementation 'it.sephiroth.android.library.targettooltip:target-tooltip-library:1.3.15'
+
 
 }
