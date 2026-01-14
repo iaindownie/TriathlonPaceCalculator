@@ -13,8 +13,9 @@
         android:theme="@style/Theme.TriathlonPaceCalculator">
         <activity
             android:name=".MainActivity"
+            android:enableOnBackInvokedCallback="true"
             android:exported="true"
-            android:enableOnBackInvokedCallback="true">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
