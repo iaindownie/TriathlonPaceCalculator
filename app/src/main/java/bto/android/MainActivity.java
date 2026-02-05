@@ -208,8 +208,8 @@ public class MainActivity extends AppCompatActivity {
                         f4.setVisibility(View.VISIBLE);
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, false);
-                        button3 = Utils.returnStyledButton(activity, button4, false);
-                        button4 = Utils.returnStyledButton(activity, button3, true);
+                        button3 = Utils.returnStyledButton(activity, button3, false);
+                        button4 = Utils.returnStyledButton(activity, button4, true);
                         topLine.setText("Enter T1 & T2 times to get Tri estimate");
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
