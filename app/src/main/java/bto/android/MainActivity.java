@@ -22,6 +22,8 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.fragment.app.FragmentManager;
 import it.sephiroth.android.library.tooltip.Tooltip;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity {
 
     private boolean isDarkModeEnabled = false;
@@ -31,12 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences prefs;
 
     private MaterialButtonToggleGroup materialButtonToggleGroup;
-    private MaterialButton button1, button2, button3;
-    private FrameLayout f1, f2, f3;
+    private MaterialButton button1, button2, button3, button4;
+    private FrameLayout f1, f2, f3, f4;
 
     private FragRun fragRun;
     private FragBike fragBike;
     private FragSwim fragSwim;
+    private FragTri fragTri;
     private TextView topLine;
     private RelativeLayout rootActivity;
 
@@ -75,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
         f1 = findViewById(R.id.fragment1);
         f2 = findViewById(R.id.fragment2);
         f3 = findViewById(R.id.fragment3);
+        f4 = findViewById(R.id.fragment4);
 
         // Toggle buttons to switch between fragments
         materialButtonToggleGroup = findViewById(R.id.toggleButton);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
         // Set run selected by default on launch
         button1 = Utils.returnStyledButton(activity, button1, true);
 
@@ -89,31 +94,48 @@ public class MainActivity extends AppCompatActivity {
         fragRun = new FragRun();
         fragBike = new FragBike();
         fragSwim = new FragSwim();
+        fragTri = new FragTri();
         manager.beginTransaction().replace(R.id.fragment1, fragRun, "fragmentone").commit();
         manager.beginTransaction().replace(R.id.fragment2, fragBike, "fragmenttwo").commit();
         manager.beginTransaction().replace(R.id.fragment3, fragSwim, "fragmentthree").commit();
+        manager.beginTransaction().replace(R.id.fragment4, fragTri, "fragmentfour").commit();
 
         if (tabPref == 0) {
             button1 = Utils.returnStyledButton(activity, button1, true);
             button2 = Utils.returnStyledButton(activity, button2, false);
             button3 = Utils.returnStyledButton(activity, button3, false);
+            button4 = Utils.returnStyledButton(activity, button4, false);
             f1.setVisibility(View.VISIBLE);
-            f2.setVisibility(View.GONE);
-            f3.setVisibility(View.GONE);
+            f2.setVisibility(GONE);
+            f3.setVisibility(GONE);
+            f4.setVisibility(GONE);
         } else if (tabPref == 1) {
             button1 = Utils.returnStyledButton(activity, button1, false);
             button2 = Utils.returnStyledButton(activity, button2, true);
             button3 = Utils.returnStyledButton(activity, button3, false);
-            f1.setVisibility(View.GONE);
+            button4 = Utils.returnStyledButton(activity, button4, false);
+            f1.setVisibility(GONE);
             f2.setVisibility(View.VISIBLE);
-            f3.setVisibility(View.GONE);
-        } else {
+            f3.setVisibility(GONE);
+            f4.setVisibility(GONE);
+        } else if (tabPref == 2) {
             button1 = Utils.returnStyledButton(activity, button1, false);
             button2 = Utils.returnStyledButton(activity, button2, false);
             button3 = Utils.returnStyledButton(activity, button3, true);
-            f1.setVisibility(View.GONE);
-            f2.setVisibility(View.GONE);
+            button4 = Utils.returnStyledButton(activity, button4, false);
+            f1.setVisibility(GONE);
+            f2.setVisibility(GONE);
             f3.setVisibility(View.VISIBLE);
+            f4.setVisibility(GONE);
+        } else {
+            button1 = Utils.returnStyledButton(activity, button1, false);
+            button2 = Utils.returnStyledButton(activity, button2, false);
+            button3 = Utils.returnStyledButton(activity, button3, false);
+            button4 = Utils.returnStyledButton(activity, button4, true);
+            f1.setVisibility(GONE);
+            f2.setVisibility(GONE);
+            f3.setVisibility(GONE);
+            f4.setVisibility(View.VISIBLE);
         }
 
         boolean tutorialBlueBubble = prefs.getBoolean("TUTORIAL_BLUE_BUBBLE", false);
@@ -126,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         // Set up toggle button listener
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
             @Override
@@ -134,11 +155,13 @@ public class MainActivity extends AppCompatActivity {
                 if (isChecked) {
                     if (checkedId == button1.getId()) {
                         f1.setVisibility(View.VISIBLE);
-                        f2.setVisibility(View.GONE);
-                        f3.setVisibility(View.GONE);
+                        f2.setVisibility(GONE);
+                        f3.setVisibility(GONE);
+                        f4.setVisibility(GONE);
                         button1 = Utils.returnStyledButton(activity, button1, true);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, false);
+                        button4 = Utils.returnStyledButton(activity, button4, false);
                         topLine.setText(R.string.helpTextGeneric);
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
@@ -147,12 +170,14 @@ public class MainActivity extends AppCompatActivity {
                         mFirebaseAnalytics.logEvent("Run_Clicked", new Bundle());
                     }
                     if (checkedId == button2.getId()) {
-                        f1.setVisibility(View.GONE);
+                        f1.setVisibility(GONE);
                         f2.setVisibility(View.VISIBLE);
-                        f3.setVisibility(View.GONE);
+                        f3.setVisibility(GONE);
+                        f4.setVisibility(GONE);
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, true);
                         button3 = Utils.returnStyledButton(activity, button3, false);
+                        button4 = Utils.returnStyledButton(activity, button4, false);
                         topLine.setText(R.string.helpTextBike);
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
@@ -161,18 +186,36 @@ public class MainActivity extends AppCompatActivity {
                         mFirebaseAnalytics.logEvent("Bike_Clicked", new Bundle());
                     }
                     if (checkedId == button3.getId()) {
-                        f1.setVisibility(View.GONE);
-                        f2.setVisibility(View.GONE);
+                        f1.setVisibility(GONE);
+                        f2.setVisibility(GONE);
                         f3.setVisibility(View.VISIBLE);
+                        f4.setVisibility(GONE);
                         button1 = Utils.returnStyledButton(activity, button1, false);
                         button2 = Utils.returnStyledButton(activity, button2, false);
                         button3 = Utils.returnStyledButton(activity, button3, true);
+                        button4 = Utils.returnStyledButton(activity, button4, false);
                         topLine.setText(R.string.helpTextGeneric);
 
                         SharedPreferences.Editor editor = prefs.edit().putInt(
                                 "tabPref", 2);
                         editor.apply();
                         mFirebaseAnalytics.logEvent("Swim_Clicked", new Bundle());
+                    }
+                    if (checkedId == button4.getId()) {
+                        f1.setVisibility(GONE);
+                        f2.setVisibility(GONE);
+                        f3.setVisibility(GONE);
+                        f4.setVisibility(View.VISIBLE);
+                        button1 = Utils.returnStyledButton(activity, button1, false);
+                        button2 = Utils.returnStyledButton(activity, button2, false);
+                        button3 = Utils.returnStyledButton(activity, button4, false);
+                        button4 = Utils.returnStyledButton(activity, button3, true);
+                        topLine.setText("Enter T1 & T2 times to get Tri estimate");
+
+                        SharedPreferences.Editor editor = prefs.edit().putInt(
+                                "tabPref", 3);
+                        editor.apply();
+                        mFirebaseAnalytics.logEvent("Tri_Clicked", new Bundle());
                     }
                 }
             }
