@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
@@ -329,6 +330,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
         recyclerView.setVisibility(VISIBLE);
         predictionsContainer.setVisibility(GONE);
 
+        // Get the distance field and pace fields
         if (v.getId() == timeButton.getId()) {
             String t3a = text3a.getText().toString();
             if (t3a == null || t3a.isEmpty())
@@ -350,6 +352,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
             imm.hideSoftInputFromWindow(text3c.getWindowToken(), 0);
         }
+        // Get the time fields and pace fields
         if (v.getId() == distanceButton.getId()) {
             String aaa = text1a.getText().toString();
             if (aaa == null || aaa.isEmpty())
@@ -375,6 +378,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text2.setText(dist);
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
+        // Get the time fields and distance field
         if (v.getId() == paceButton.getId()) {
             String t1a = text1a.getText().toString();
             if (t1a == null || t1a.isEmpty())
@@ -413,6 +417,11 @@ public class FragRun extends Fragment implements View.OnClickListener {
         timeButton.setEnabled(true);
         distanceButton.setEnabled(true);
         paceButton.setEnabled(true);
+
+    }
+
+    private void portTimeToTriFrag(String time){
+        Log.d("INFO", time);
     }
 
 

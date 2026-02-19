@@ -23,7 +23,7 @@ public class FragTri extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.frag_bike, container, false);
+        View rootView = inflater.inflate(R.layout.frag_tri, container, false);
 
         return rootView;
     }
