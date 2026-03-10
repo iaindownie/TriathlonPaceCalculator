@@ -74,6 +74,16 @@ public class Utils {
         return button;
     }
 
+    public static void styleButton(Activity activity, MaterialButton button, boolean selected) {
+        if (selected) {
+            button.setBackgroundColor(activity.getResources().getColor(R.color.base_color_info_default));
+            button.setTextColor(activity.getResources().getColor(R.color.white));
+        } else {
+            button.setBackgroundColor(activity.getResources().getColor(R.color.white));
+            button.setTextColor(activity.getResources().getColor(R.color.base_color_neutral_default));
+        }
+    }
+
     public static void handleBlueAlert(Activity activity, View view, Tooltip.Gravity gravity, String string) {
 
         DisplayMetrics metrics = activity.getResources().getDisplayMetrics();
