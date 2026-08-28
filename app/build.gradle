@@ -8,14 +8,14 @@ plugins {
 
 android {
     namespace 'bto.android'
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId "bto.android"
-        minSdk 30
-        targetSdk 36
-        versionCode 29
-        versionName "3.12"
+        minSdk 31
+        targetSdk 37
+        versionCode 30
+        versionName "3.13"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
