@@ -269,6 +269,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             text1b.setText(time.substring(time.indexOf(":") + 1,
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
+            ((MainActivity)getActivity()).updateField(2, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text3c.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -291,6 +292,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
                     Double.valueOf(ccc), Double.valueOf(eee),
                     Double.valueOf(fff));
             text2.setText(dist);
+            ((MainActivity)getActivity()).updateField(2, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -315,6 +317,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             } else {
                 filler3swim.setText(getString(R.string.per100yds));
             }
+            ((MainActivity)getActivity()).updateField(2, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -326,6 +329,7 @@ public class FragSwim extends Fragment implements View.OnClickListener {
             text3b.setText("");
             text3c.setText("");
             recyclerView.setAdapter(null);
+            ((MainActivity)getActivity()).updateField(2, false, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);

@@ -350,6 +350,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text1b.setText(time.substring(time.indexOf(":") + 1,
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
+            ((MainActivity)getActivity()).updateField(0, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text3c.getWindowToken(), 0);
         }
         // Get the time fields and pace fields
@@ -376,6 +377,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                     Double.valueOf(ccc), Double.valueOf(ddd),
                     Double.valueOf(eee), Double.valueOf(fff));
             text2.setText(dist);
+            ((MainActivity)getActivity()).updateField(0, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         // Get the time fields and distance field
@@ -398,6 +400,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             text3b.setText(pace.substring(pace.indexOf(":") + 1,
                     pace.lastIndexOf(":")));
             text3c.setText(pace.substring(pace.lastIndexOf(":") + 1));
+            ((MainActivity)getActivity()).updateField(0, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -412,6 +415,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             runResultsContainer.setVisibility(GONE);
             recyclerView.setAdapter(null);
             predictionsRecyclerView.setAdapter(null);
+            ((MainActivity)getActivity()).updateField(0, false, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);
@@ -438,7 +442,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                     + getGoodTimeValues(pace * (i + 1)));
         }
         results.add(getString(R.string.last_split) + " - " + dist + ":  "
-                + getGoodTimeEndValues(total));
+                + Utils.getGoodTimeEndValues(total));
         runResultsContainer.setVisibility(VISIBLE);
         ResultsRecycler rr = new ResultsRecycler(results);
         recyclerView.setAdapter(rr);
@@ -468,35 +472,21 @@ public class FragRun extends Fragment implements View.OnClickListener {
         ResultsRecycler predictionsText = new ResultsRecycler(predictions);
         predictionsRecyclerView.setAdapter(predictionsText);
 
-
     }
 
-    private String getGoodTimeEndValues(double val) {
-        val = val / 60;
-        int mins = (int) val;
-        double secs = val - mins;
-        if (mins >= 60) {
-            int hours = mins / 60;
-            String str = (hours + ":" + (paddedInt((mins - (hours * 60))))
-                    + ":" + paddedInt((int) Math.round(secs * 60)));
-            return str;
-        } else {
-            return "0:" + paddedInt(mins) + ":"
-                    + paddedInt((int) Math.round(secs * 60));
-        }
-    }
+
 
     private String getGoodTimeValues(double val) {
         int mins = (int) val;
         double secs = val - mins;
         if (mins >= 60) {
             int hours = mins / 60;
-            String str = (hours + ":" + (paddedInt((mins - (hours * 60))))
-                    + ":" + paddedInt((int) Math.round(secs * 60)));
+            String str = (hours + ":" + (Utils.paddedInt((mins - (hours * 60))))
+                    + ":" + Utils.paddedInt((int) Math.round(secs * 60)));
             return str;
         } else {
-            return "0:" + paddedInt(mins) + ":"
-                    + paddedInt((int) Math.round(secs * 60));
+            return "0:" + Utils.paddedInt(mins) + ":"
+                    + Utils.paddedInt((int) Math.round(secs * 60));
         }
     }
 
@@ -512,7 +502,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
         double tSecs = (double) (total - ((tHours * 60 * 60) + (tMins * 60)));
         this.setSplits(dist.doubleValue(), total);
 
-        return paddedInt(tHours) + ":" + paddedInt(tMins) + ":" + tSecs;
+        return Utils.paddedInt(tHours) + ":" + Utils.paddedInt(tMins) + ":" + tSecs;
     }
 
     private String getPace(Double dist, Double hours, Double mins, Double secs) {
@@ -529,7 +519,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
                 .valueOf((total - ((tHours * 60 * 60) + (tMins * 60))));
         if (!tSecs.isNaN()) {
             this.setSplits(dist.doubleValue(), totalSecs);
-            return paddedInt(tHours) + ":" + paddedInt(tMins) + ":"
+            return Utils.paddedInt(tHours) + ":" + Utils.paddedInt(tMins) + ":"
                     + tSecs.doubleValue();
         } else {
             return "00:00:0.0";
@@ -557,12 +547,7 @@ public class FragRun extends Fragment implements View.OnClickListener {
             return "0.0";
     }
 
-    private String paddedInt(int val) {
-        if (val < 10)
-            return "0" + val;
-        else
-            return "" + val;
-    }
+
 
     private String getPresetDistance(int preset, boolean isMetric) {
         if (isMetric) {

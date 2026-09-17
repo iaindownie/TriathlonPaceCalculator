@@ -2,6 +2,7 @@ package bto.android;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,5 +34,20 @@ public class FragTri extends Fragment implements View.OnClickListener {
         // do what you want to do when button is clicked
         InputMethodManager imm = (InputMethodManager) getActivity()
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
+    }
+
+    public void handleFragmentUpdates(int sourceFrag){
+        if(sourceFrag==0){
+            Log.d("INFO", "Run frag accepted!");
+        }
+        if(sourceFrag==1){
+            Log.d("INFO", "Bike frag accepted!");
+        }
+        if(sourceFrag==2){
+            Log.d("INFO", "Swim frag accepted!");
+        }
+        if(sourceFrag==3){
+            Log.d("INFO", "Clear clicked!");
+        }
     }
 }

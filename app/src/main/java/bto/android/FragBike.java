@@ -253,6 +253,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             text1b.setText(time.substring(time.indexOf(":") + 1,
                     time.lastIndexOf(":")));
             text1c.setText(time.substring(time.lastIndexOf(":") + 1));
+            ((MainActivity)getActivity()).updateField(1, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text3a.getWindowToken(), 0);
         }
         if (v.getId() == distanceButton.getId()) {
@@ -271,6 +272,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             String dist = getDistance(Double.valueOf(aaa), Double.valueOf(bbb),
                     Double.valueOf(ccc), Double.valueOf(ddd));
             text2.setText(dist);
+            ((MainActivity)getActivity()).updateField(1, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text1c.getWindowToken(), 0);
         }
         if (v.getId() == paceButton.getId()) {
@@ -294,6 +296,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             } else {
                 filler3speed.setText(getActivity().getResources().getString(R.string.mph));
             }
+            ((MainActivity)getActivity()).updateField(1, true, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         if (v.getId() == clearButton.getId()) {
@@ -307,6 +310,7 @@ public class FragBike extends Fragment implements View.OnClickListener {
             timeButton.setEnabled(true);
             distanceButton.setEnabled(true);
             paceButton.setEnabled(true);
+            ((MainActivity)getActivity()).updateField(1, false, text1a, text1b, text1c);
             imm.hideSoftInputFromWindow(text2.getWindowToken(), 0);
         }
         timeButton.setEnabled(true);

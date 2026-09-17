@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -130,14 +131,14 @@ public class MainActivity extends AppCompatActivity {
             f3.setVisibility(View.VISIBLE);
             f4.setVisibility(GONE);
         } else {
-//            Utils.styleButton(activity, button1, false);
-//            Utils.styleButton(activity, button2, false);
-//            Utils.styleButton(activity, button3, false);
-//            Utils.styleButton(activity, button4, true);
-//            f1.setVisibility(GONE);
-//            f2.setVisibility(GONE);
-//            f3.setVisibility(GONE);
-//            f4.setVisibility(View.VISIBLE);
+            Utils.styleButton(activity, button1, false);
+            Utils.styleButton(activity, button2, false);
+            Utils.styleButton(activity, button3, false);
+            Utils.styleButton(activity, button4, true);
+            f1.setVisibility(GONE);
+            f2.setVisibility(GONE);
+            f3.setVisibility(GONE);
+            f4.setVisibility(View.VISIBLE);
         }
 
         boolean tutorialBlueBubble = prefs.getBoolean("TUTORIAL_BLUE_BUBBLE", false);
@@ -203,22 +204,22 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                         mFirebaseAnalytics.logEvent("Swim_Clicked", new Bundle());
                     }
-//                    if (checkedId == button4.getId()) {
-//                        f1.setVisibility(GONE);
-//                        f2.setVisibility(GONE);
-//                        f3.setVisibility(GONE);
-//                        f4.setVisibility(View.VISIBLE);
-//                        Utils.styleButton(activity, button1, false);
-//                        Utils.styleButton(activity, button2, false);
-//                        Utils.styleButton(activity, button3, false);
-//                        Utils.styleButton(activity, button4, true);
-//                        topLine.setText("Enter T1 & T2 times to get Tri estimate");
-//
-//                        SharedPreferences.Editor editor = prefs.edit().putInt(
-//                                "tabPref", 3);
-//                        editor.apply();
-//                        mFirebaseAnalytics.logEvent("Tri_Clicked", new Bundle());
-//                    }Bundle
+                    if (checkedId == button4.getId()) {
+                        f1.setVisibility(GONE);
+                        f2.setVisibility(GONE);
+                        f3.setVisibility(GONE);
+                        f4.setVisibility(View.VISIBLE);
+                        Utils.styleButton(activity, button1, false);
+                        Utils.styleButton(activity, button2, false);
+                        Utils.styleButton(activity, button3, false);
+                        Utils.styleButton(activity, button4, true);
+                        topLine.setText("Enter T1 & T2 times to get Tri estimate");
+
+                        SharedPreferences.Editor editor = prefs.edit().putInt(
+                                "tabPref", 3);
+                        editor.apply();
+                        mFirebaseAnalytics.logEvent("Tri_Clicked", new Bundle());
+                    }
                 }
             }
         });
@@ -274,6 +275,35 @@ public class MainActivity extends AppCompatActivity {
     public void showCoffeeFragment() {
         CoffeeDialogFragment coffeeDialogFragment = new CoffeeDialogFragment();
         coffeeDialogFragment.show(getSupportFragmentManager(), CoffeeDialogFragment.TAG);
+    }
+
+    public void updateField(int sourceFrag, boolean clear, TextView a, TextView b, TextView c) {
+        if (sourceFrag == 0) {
+            Log.d("INFO", "Run frag clicked!");
+            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
+            fragTri.handleFragmentUpdates(0);
+        }
+        if (sourceFrag == 1) {
+            Log.d("INFO", "Bike frag clicked!");
+            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
+            fragTri.handleFragmentUpdates(1);
+        }
+        if (sourceFrag == 2) {
+            Log.d("INFO", "Swim frag clicked!");
+            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
+            fragTri.handleFragmentUpdates(2);
+        }
+        if (sourceFrag == 3) {
+            Log.d("INFO", "Clear clicked");
+            fragTri.handleFragmentUpdates(3);
+        }
+
     }
 
 }

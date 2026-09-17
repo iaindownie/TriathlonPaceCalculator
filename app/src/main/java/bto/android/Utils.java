@@ -127,4 +127,48 @@ public class Utils {
                 })
                 .show();
     }
+
+    public static String getGoodTimeEndValues(double val) {
+        val = val / 60;
+        int mins = (int) val;
+        double secs = val - mins;
+        if (mins >= 60) {
+            int hours = mins / 60;
+            String str = (hours + ":" + (paddedInt((mins - (hours * 60))))
+                    + ":" + paddedInt((int) Math.round(secs * 60)));
+            return str;
+        } else {
+            return "0:" + paddedInt(mins) + ":"
+                    + paddedInt((int) Math.round(secs * 60));
+        }
+    }
+
+    public static String paddedInt(int val) {
+        if (val < 10)
+            return "0" + val;
+        else
+            return "" + val;
+    }
+
+    public static String getTimeFromThreeTextViews(double hours, double mins, double secs) {
+        double total = 0.0;
+        if (hours > 0) {
+            total = ((hours * 60) * 60 * mins) + secs;
+        } else {
+            total = (60 * mins) + secs;
+        }
+        int tHours = (int) (total / 60 / 60);
+        int tMins = (int) ((total / 60) - (tHours * 60));
+        double tSecs = (double) (total - ((tHours * 60 * 60) + (tMins * 60)));
+
+        return Utils.paddedInt(tHours) + ":" + Utils.paddedInt(tMins) + ":" + tSecs;
+    }
+
+    public static String handleZeroStringValues(String str) {
+        if (str.isEmpty()) {
+            return "0";
+        } else {
+            return str;
+        }
+    }
 }
