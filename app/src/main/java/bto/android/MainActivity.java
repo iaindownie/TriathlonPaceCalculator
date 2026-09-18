@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         f2 = findViewById(R.id.fragment2);
         f3 = findViewById(R.id.fragment3);
         f4 = findViewById(R.id.fragment4);
-        f4.setVisibility(GONE);
+        //f4.setVisibility(GONE);
 
         // Toggle buttons to switch between fragments
         materialButtonToggleGroup = findViewById(R.id.toggleButton);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
-        button4.setVisibility(GONE);
+        //button4.setVisibility(GONE);
         // Set run selected by default on launch
         button1 = Utils.returnStyledButton(activity, button1, true);
 
@@ -280,28 +280,31 @@ public class MainActivity extends AppCompatActivity {
     public void updateField(int sourceFrag, boolean clear, TextView a, TextView b, TextView c) {
         if (sourceFrag == 0) {
             Log.d("INFO", "Run frag clicked!");
-            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+            String runTime = Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
                     Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
-                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
-            fragTri.handleFragmentUpdates(0);
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString())));
+            Log.d("INFO", runTime);
+            fragTri.handleFragmentUpdates(0, runTime);
         }
         if (sourceFrag == 1) {
             Log.d("INFO", "Bike frag clicked!");
-            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+            String bikeTime = Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
                     Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
-                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
-            fragTri.handleFragmentUpdates(1);
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString())));
+            Log.d("INFO", bikeTime);
+            fragTri.handleFragmentUpdates(1, bikeTime);
         }
         if (sourceFrag == 2) {
             Log.d("INFO", "Swim frag clicked!");
-            Log.d("INFO", Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
+            String swimTime = Utils.getTimeFromThreeTextViews(Double.valueOf(Utils.handleZeroStringValues(a.getText().toString())),
                     Double.valueOf(Utils.handleZeroStringValues(b.getText().toString())),
-                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString()))));
-            fragTri.handleFragmentUpdates(2);
+                    Double.valueOf(Utils.handleZeroStringValues(c.getText().toString())));
+            Log.d("INFO", swimTime);
+            fragTri.handleFragmentUpdates(2, swimTime);
         }
         if (sourceFrag == 3) {
             Log.d("INFO", "Clear clicked");
-            fragTri.handleFragmentUpdates(3);
+            fragTri.handleFragmentUpdates(3, "");
         }
 
     }

@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
@@ -151,12 +152,14 @@ public class Utils {
     }
 
     public static String getTimeFromThreeTextViews(double hours, double mins, double secs) {
+        Log.d("INFO", "" + hours + "-" + mins + "-" + secs);
         double total = 0.0;
         if (hours > 0) {
             total = ((hours * 60) * 60 * mins) + secs;
         } else {
             total = (60 * mins) + secs;
         }
+        Log.d("INFO", "" + total);
         int tHours = (int) (total / 60 / 60);
         int tMins = (int) ((total / 60) - (tHours * 60));
         double tSecs = (double) (total - ((tHours * 60 * 60) + (tMins * 60)));

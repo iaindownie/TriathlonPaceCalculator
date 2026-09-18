@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -18,6 +19,8 @@ import androidx.fragment.app.Fragment;
 
 public class FragTri extends Fragment implements View.OnClickListener {
 
+    private TextView runTime;
+
     public FragTri() {
     }
 
@@ -25,6 +28,8 @@ public class FragTri extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.frag_tri, container, false);
+
+        runTime = rootView.findViewById(R.id.runTime);
 
         return rootView;
     }
@@ -36,9 +41,10 @@ public class FragTri extends Fragment implements View.OnClickListener {
                 .getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
-    public void handleFragmentUpdates(int sourceFrag){
+    public void handleFragmentUpdates(int sourceFrag, String str){
         if(sourceFrag==0){
             Log.d("INFO", "Run frag accepted!");
+            runTime.setText(str);
         }
         if(sourceFrag==1){
             Log.d("INFO", "Bike frag accepted!");
